@@ -70,7 +70,7 @@ export default function Home() {
         <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
           <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-[#1A202C]">
+            <label className="block text-sm font-medium text-black">
               Valor do processo (R$)
             </label>
             <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
@@ -92,14 +92,14 @@ export default function Home() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-[#EBF4FF]">
-                  <th className="border px-4 py-2 text-left">Característica</th>
-                  <th className="border px-4 py-2 text-left">MIDLEJ Capital</th>
-                  <th className="border px-4 py-2 text-left">Empréstimo Bancário</th>
+                <tr className="bg-[#EBF4FF] text-[#1A202C]">
+                  <th className="border px-4 py-2 text-left text-[#1A202C]">Característica</th>
+                  <th className="border px-4 py-2 text-left text-[#1A202C]">MIDLEJ Capital</th>
+                  <th className="border px-4 py-2 text-left text-[#1A202C]">Empréstimo Bancário</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td className="border px-4 py-2">Tempo para receber</td><td className="border px-4 py-2">✓ 24 horas</td><td className="border px-4 py-2">✗ 5–30 dias</td></tr>
+                <tr><td className="border px-4 py-2 text-[#1A202C]">Tempo para receber</td><td className="border px-4 py-2">✓ 24 horas</td><td className="border px-4 py-2 text-[#1A202C]">✗ 5–30 dias</td></tr>
                 <tr><td className="border px-4 py-2">Juros</td><td className="border px-4 py-2">✓ Não há juros</td><td className="border px-4 py-2">✗ 2–5% ao mês</td></tr>
                 <tr><td className="border px-4 py-2">Documentação</td><td className="border px-4 py-2">✓ Mínima</td><td className="border px-4 py-2">✗ Extensa</td></tr>
                 <tr><td className="border px-4 py-2">Garantias</td><td className="border px-4 py-2">✓ Próprio processo</td><td className="border px-4 py-2">✗ Bens pessoais</td></tr>
