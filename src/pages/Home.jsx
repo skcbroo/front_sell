@@ -90,7 +90,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-separate border-spacing-0 rounded-lg overflow-hidden shadow-sm">
               <thead>
                 <tr className="bg-[#EBF4FF] text-[#1A202C]">
                   <th className="border px-4 py-2 text-left text-[#1A202C]">Característica</th>
@@ -99,10 +99,10 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td className="border px-4 py-2 text-[#1A202C]">Tempo para receber</td><td className="border px-4 py-2">✓ 24 horas</td><td className="border px-4 py-2 text-[#1A202C]">✗ 5–30 dias</td></tr>
-                <tr><td className="border px-4 py-2">Juros</td><td className="border px-4 py-2">✓ Não há juros</td><td className="border px-4 py-2">✗ 2–5% ao mês</td></tr>
-                <tr><td className="border px-4 py-2">Documentação</td><td className="border px-4 py-2">✓ Mínima</td><td className="border px-4 py-2">✗ Extensa</td></tr>
-                <tr><td className="border px-4 py-2">Garantias</td><td className="border px-4 py-2">✓ Próprio processo</td><td className="border px-4 py-2">✗ Bens pessoais</td></tr>
+                <tr><td className="border px-4 py-2 text-[#1A202C]">Tempo para receber</td><td className="border px-4 py-2 text-[#1A202C]">✓ 24 horas</td><td className="border px-4 py-2 text-[#1A202C]">✗ 5–30 dias</td></tr>
+                <tr><td className="border px-4 py-2 text-[#1A202C]">Juros</td><td className="border px-4 py-2 text-[#1A202C]">✓ Não há juros</td><td className="border px-4 py-2 text-[#1A202C]">✗ 2–5% ao mês</td></tr>
+                <tr><td className="border px-4 py-2 text-[#1A202C]">Documentação</td><td className="border px-4 py-2 text-[#1A202C]">✓ Mínima</td><td className="border px-4 py-2 text-[#1A202C]">✗ Extensa</td></tr>
+                <tr><td className="border px-4 py-2 text-[#1A202C]">Garantias</td><td className="border px-4 py-2 text-[#1A202C]">✓ Próprio processo</td><td className="border px-4 py-2 text-[#1A202C]">✗ Bens pessoais</td></tr>
               </tbody>
             </table>
           </div>
