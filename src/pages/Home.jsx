@@ -90,15 +90,15 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
                     <div className="overflow-x-auto">
-                     <table className="w-full border border-black border-collapse rounded-lg overflow-hidden shadow-sm">
+                     <table className="w-full border border-black border-collapse rounded-lg overflow-hidden">
   <thead>
     <tr className="bg-[#EBF4FF] text-black">
-      <th className="border border-black px-4 py-2 text-left font-bold">Característica</th>
-      <th className="border border-black px-4 py-2 text-left font-bold">MIDLEJ Capital</th>
-      <th className="border border-black px-4 py-2 text-left font-bold">Empréstimo Bancário</th>
+      <th className="border border-black px-4 py-2 text-center font-bold">Característica</th>
+      <th className="border border-black px-4 py-2 text-center font-bold">MIDLEJ Capital</th>
+      <th className="border border-black px-4 py-2 text-center font-bold">Empréstimo Bancário</th>
     </tr>
   </thead>
-  <tbody className="text-black">
+  <tbody className="text-black text-center">
     <tr>
       <td className="border border-black px-4 py-2">Tempo para receber</td>
       <td className="border border-black px-4 py-2">✓ 24 horas</td>
@@ -121,6 +121,7 @@ export default function Home() {
     </tr>
   </tbody>
 </table>
+
 
 
 
