@@ -14,7 +14,7 @@ export default function Home() {
     return (
         <NavbarLayout>
             {/* HERO */}
-            <section className="bg-transparent text-black py-0 px-4">
+            <section className="bg-transparent text-black  px-4">
                 <div className="max-w-6xl mx-auto text-center">
                     <Hero />
                 </div>
