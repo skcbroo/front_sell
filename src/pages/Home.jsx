@@ -52,18 +52,19 @@ export default function Home() {
             </section>
 
             {/* COMO FUNCIONA */}
-            <section id="como-funciona" className="bg-[#EBF4FF] py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Como Funciona</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                        <Step number="1" title="Análise 24h" text="Envie seus documentos para análise rápida" />
-                        <Step number="2" title="Proposta" text="Receba nossa proposta comercial" />
-                        <Step number="3" title="Documentação" text="Assine os contratos necessários" />
-                        <Step number="4" title="Cartório" text="Registramos a cessão em cartório" />
-                        <Step number="5" title="Pagamento 24h" text="Dinheiro na sua conta em 24 horas" />
-                    </div>
-                </div>
-            </section>
+           <section id="como-funciona" className="w-full bg-[#EBF4FF] py-16 px-4">
+  <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Como Funciona</h2>
+  <div className="max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <Step number="1" title="Análise 24h" text="Envie seus documentos para análise rápida" />
+      <Step number="2" title="Proposta" text="Receba nossa proposta comercial" />
+      <Step number="3" title="Documentação" text="Assine os contratos necessários" />
+      <Step number="4" title="Cartório" text="Registramos a cessão em cartório" />
+      <Step number="5" title="Pagamento 24h" text="Dinheiro na sua conta em 24 horas" />
+    </div>
+  </div>
+</section>
+
 
             {/* CALCULADORA */}
             <section className="max-w-4xl mx-auto px-4 py-16">
