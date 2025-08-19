@@ -20,12 +20,9 @@ export default function Home() {
             </section>
 
             {/* DIFERENCIAIS */}
-            <section className="max-w-6xl mx-auto px-4 py-16">
-               
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Diferenciais/>
-                </div>
-            </section>
+            <div className="py-16">
+  <Diferenciais />
+</div>
 
             {/* COMO FUNCIONA */}
             <section id="como-funciona" className="bg-[#EBF4FF] py-16 px-4 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
