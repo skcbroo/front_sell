@@ -1,7 +1,17 @@
-
 import { Link } from "react-router-dom";
 import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
+// Se você usa react-helmet-async, descomente abaixo
+// import { Helmet } from "react-helmet-async";
+
+/**
+ * Página Home refinada no padrão visual aprovado
+ * - Paleta e componentes consistentes (bg #EBF4FF, borda #CBD5E1, título #1A202C)
+ * - CTA com UTM e segurança (noopener/noreferrer)
+ * - Mapa com lat/lng e link de rota
+ * - Seções: Hero, Diferenciais, Como funciona, Chamada, FAQ, Contato (LeadForm), Localização, Footer
+ * - Acessibilidade: sr-only, botões com aria-label, imagens com alt descritivo, links tel/mailto
+ */
 
 // === Configuração do endereço para o mapa ===
 const ENDERECO = "St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040";
@@ -9,7 +19,6 @@ const ENDERECO = "St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, 
 function MapEmbed({ lat, lng, address }) {
   const hasCoords = typeof lat === "number" && typeof lng === "number";
   const query = hasCoords ? `${lat},${lng}` : encodeURIComponent(address || "");
-
   if (!query) return null;
 
   const iframeSrc = `https://www.google.com/maps?q=${query}&z=15&output=embed`;
@@ -21,7 +30,7 @@ function MapEmbed({ lat, lng, address }) {
     <div className="space-y-2">
       <div className="w-full h-64 rounded-lg overflow-hidden border border-[#CBD5E1]">
         <iframe
-          title="Localização"
+          title="Localização Midlej Capital"
           src={iframeSrc}
           width="100%"
           height="100%"
@@ -33,7 +42,7 @@ function MapEmbed({ lat, lng, address }) {
       <a
         href={directionsHref}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="inline-block text-sm underline text-[#2B6CB0] hover:text-[#1A4E86]"
       >
         Ver rota no Google Maps
@@ -46,14 +55,25 @@ export default function Home() {
   const falarComEquipe = () => {
     const numeroEmpresa = "5561996204646";
     const mensagem = encodeURIComponent(
-      "Olá, gostaria de falar com a equipe da Midlej Capital para saber mais sobre as oportunidades de crédito."
+      "Olá! Gostaria de falar com a equipe da Midlej Capital sobre oportunidades de créditos judiciais."
     );
-    const link = `https://wa.me/${numeroEmpresa}?text=${mensagem}`;
-    window.open(link, "_blank");
+    const link = `https://wa.me/${numeroEmpresa}?text=${mensagem}&utm_source=site&utm_medium=cta&utm_campaign=home_whatsapp`;
+    window.open(link, "_blank", "noopener,noreferrer");
   };
 
   return (
     <NavbarLayout>
+      {/* <Helmet>
+        <title>Midlej Capital — Créditos Judiciais com Transparência</title>
+        <meta
+          name="description"
+          content="Conheça oportunidades de créditos judiciais com curadoria técnica, transparência e acompanhamento até o recebimento."
+        />
+        <meta property="og:title" content="Midlej Capital — Créditos Judiciais" />
+        <meta property="og:description" content="Curadoria, transparência e acompanhamento. Fale com nossa equipe." />
+        <meta property="og:type" content="website" />
+      </Helmet> */}
+
       <h1 className="sr-only">Midlej Capital — Plataforma de Créditos Judiciais</h1>
 
       {/* HERO */}
@@ -64,25 +84,26 @@ export default function Home() {
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide select-none cursor-default">
                 Soluções em créditos judiciais
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1A202C] mt-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1A202C] mt-1 leading-tight">
                 Investimento seguro, acompanhamento transparente
               </h2>
               <p className="text-[#4A5568] mt-3 select-none cursor-default">
-                Conectamos oportunidades de créditos judiciais a investidores,
-                com curadoria, informações claras e um painel simples para
-                acompanhar cada etapa até o recebimento.
+                Conectamos oportunidades de créditos judiciais a investidores, com curadoria,
+                informações claras e um painel simples para acompanhar cada etapa até o recebimento.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                <a
-                  href="/creditos"
+                <Link
+                  to="/creditos"
                   className="inline-block bg-[#2B6CB0] text-white font-semibold rounded-lg px-5 py-2 hover:opacity-90 transition"
+                  aria-label="Ver créditos disponíveis"
                 >
                   Ver créditos disponíveis
-                </a>
+                </Link>
                 <button
                   onClick={falarComEquipe}
                   className="inline-block bg-white text-[#2B6CB0] border border-[#CBD5E1] font-semibold rounded-lg px-5 py-2 hover:bg-[#F7FAFC] transition"
+                  aria-label="Falar com a equipe pelo WhatsApp"
                 >
                   Fale com a equipe
                 </button>
@@ -92,9 +113,10 @@ export default function Home() {
             <div className="flex justify-center md:justify-end">
               <img
                 src="/buss.jpg"
-                alt="Reunião de negócios"
+                alt="Equipe da Midlej Capital em reunião de negócios"
                 className="w-48 md:w-72 lg:w-96 rounded-lg object-cover select-none"
                 draggable="false"
+                loading="lazy"
               />
             </div>
           </div>
@@ -124,10 +146,7 @@ export default function Home() {
 
       {/* COMO FUNCIONA */}
       <section className="max-w-6xl mx-auto mb-8">
-        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
-          Como funciona
-        </h3>
-
+        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">Como funciona</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StepHome
             numero="1"
@@ -150,20 +169,17 @@ export default function Home() {
       {/* CHAMADA PARA AÇÃO */}
       <section className="max-w-6xl mx-auto mb-8">
         <div className="rounded-xl bg-[#EBF4FF] border border-[#CBD5E1] px-6 py-6 shadow-md text-center">
-          <h3 className="text-lg md:text-xl font-bold text-[#1A202C]">
-            Pronto para conhecer as oportunidades?
-          </h3>
+          <h3 className="text-lg md:text-xl font-bold text-[#1A202C]">Pronto para conhecer as oportunidades?</h3>
           <p className="text-[#4A5568] mt-1 select-none cursor-default">
             Explore a lista de créditos ou fale com nosso time para saber mais.
           </p>
-
           <div className="mt-4 flex gap-3 justify-center">
-            <a
-              href="/creditos"
+            <Link
+              to="/creditos"
               className="inline-block bg-[#2B6CB0] text-white font-semibold rounded-lg px-5 py-2 hover:opacity-90 transition"
             >
               Acessar créditos
-            </a>
+            </Link>
             <button
               onClick={falarComEquipe}
               className="inline-block bg-white text-[#2B6CB0] border border-[#CBD5E1] font-semibold rounded-lg px-5 py-2 hover:bg-[#F7FAFC] transition"
@@ -176,9 +192,7 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="max-w-6xl mx-auto mb-10">
-        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
-          Perguntas frequentes
-        </h3>
+        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">Perguntas frequentes</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FaqHome
             q="O que é um crédito judicial?"
@@ -192,19 +206,13 @@ export default function Home() {
             q="Como é calculado o deságio?"
             a="O deságio é a relação entre o preço de aquisição e o valor do crédito. Exibimos isso claramente em cada card."
           />
-          <FaqHome
-            q="Existe suporte para dúvidas?"
-            a="Sim. Nosso atendimento está disponível para orientar e esclarecer qualquer ponto antes da decisão."
-          />
+          <FaqHome q="Existe suporte para dúvidas?" a="Sim. Nosso atendimento está disponível para orientar e esclarecer qualquer ponto antes da decisão." />
         </div>
       </section>
 
       {/* CONTATO */}
       <section className="max-w-6xl mx-auto mb-10">
-        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
-          Fale com a nossa equipe
-        </h3>
-
+        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">Fale com a nossa equipe</h3>
         <div className="rounded-xl bg-[#EBF4FF] border border-[#CBD5E1] px-6 py-6 shadow-md">
           <LeadForm />
         </div>
@@ -212,13 +220,11 @@ export default function Home() {
 
       {/* LOCALIZAÇÃO */}
       <section className="max-w-6xl mx-auto mb-8">
-        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
-          Onde estamos
-        </h3>
-
+        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">Onde estamos</h3>
         <div className="rounded-xl bg-[#EBF4FF] border border-[#CBD5E1] px-6 py-6 shadow-md text-[#2D3748]">
           <p className="text-sm mb-3">
-            <span className="font-semibold">Endereço: </span>{ENDERECO}
+            <span className="font-semibold">Endereço: </span>
+            {ENDERECO}
           </p>
           <MapEmbed lat={-15.860222} lng={-47.862396} />
         </div>
@@ -227,33 +233,32 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-transparent text-sm mt-12">
         <div className="max-w-6xl mx-auto px-6 py-8 space-y-6 text-sm text-[#1A202C]">
-          <p>
-            A MIDLEJ Capital detém uma plataforma digital que atua como correspondente bancário para facilitar
-            o processo de contratação de empréstimos. A MIDLEJ Capital não é instituição financeira e não
-            fornece crédito ao mercado. A MIDLEJ Capital atua como correspondente bancário, seguimos as
-            diretrizes da Resolução CMN Nº 4.935 do Banco Central do Brasil. A taxa de juros praticada no
-            produto de crédito pessoal pode variar de 15,80% a 17,90% a.m. (481,44% a 621,38% a.a.). Nossa
-            empresa tem o compromisso de total transparência com nossos clientes. Antes de iniciar o
-            preenchimento de uma proposta, será exibido de forma clara: a taxa de juros utilizada, tarifas
-            aplicáveis, impostos (IOF) e o custo efetivo total (CET).
+          <p className="leading-relaxed">
+            A MIDLEJ Capital detém uma plataforma digital que atua como correspondente bancário para facilitar o processo de contratação de empréstimos. A MIDLEJ Capital não é instituição financeira e não fornece crédito ao mercado. Atuamos como correspondente bancário nos termos da Resolução CMN nº 4.935 do Banco Central do Brasil. A taxa de juros do produto de crédito pessoal pode variar de 15,80% a 17,90% a.m. (481,44% a 621,38% a.a.). Antes da proposta, apresentamos de forma clara taxa de juros, tarifas aplicáveis, impostos (IOF) e o custo efetivo total (CET).
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-center md:text-left">
-            <div className="flex flex-col items-center md:items-center">
+            <div className="flex flex-col items-center md:items-start">
               <h4 className="text-lg font-bold text-[#1A202C]">MIDLEJ CAPITAL</h4>
-              <p className="mt-2">© 2023 by Midlej Tecnology.</p>
-              <p className="mt-2">CNPJ:35.340.252/0001-44</p>
+              <p className="mt-2">© {new Date().getFullYear()} Midlej Technology.</p>
+              <p className="mt-2">CNPJ: 35.340.252/0001-44</p>
             </div>
 
-            <div className="flex flex-col items-center md:items-center">
+            <div className="flex flex-col items-center md:items-start space-y-1">
               <p>
                 <span className="font-semibold">Endereço:</span> {ENDERECO}
               </p>
               <p>
-                <span className="font-semibold">Email:</span> contato@midlejcapital.com.br
+                <span className="font-semibold">Email:</span>{" "}
+                <a href="mailto:contato@midlejcapital.com.br" className="underline hover:opacity-80">
+                  contato@midlejcapital.com.br
+                </a>
               </p>
               <p>
-                <span className="font-semibold">Telefone:</span> 61 99620-4646
+                <span className="font-semibold">Telefone:</span>{" "}
+                <a href="tel:+5561996204646" className="underline hover:opacity-80">
+                  (61) 99620-4646
+                </a>
               </p>
             </div>
           </div>
@@ -264,7 +269,6 @@ export default function Home() {
 }
 
 // === COMPONENTES AUXILIARES ===
-
 function CardHome({ titulo, texto }) {
   return (
     <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-5 shadow-md text-[#2D3748]">
