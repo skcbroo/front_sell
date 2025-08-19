@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import NavbarLayout from "../components/Navbar";
-import GraficoGeral from "../components/GraficoGeral";
-import GraficoGeralPercentual from "../components/GraficoGeralPercentual";
+
 
 // === Configuração do endereço para o mapa ===
 const ENDERECO = "St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040";
