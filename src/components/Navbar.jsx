@@ -11,7 +11,7 @@ export default function NavbarLayout({ children }) {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-white">
+        <div className="min-h-screen bg-gradient-to-r from-white via-[#A6B8C7] to-[#A6B8C7] text-black">
             {/* Navbar */}
             <nav className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-white shadow-md px-6 py-2 flex items-center justify-between select-none">
 
@@ -89,4 +89,5 @@ export default function NavbarLayout({ children }) {
         </div>
     );
 }
+
 
