@@ -129,7 +129,7 @@ export default function Home() {
             </section>
 
             {/* CONTATO */}
-            <section id="contato" className="py-16 px-4 bg-[#EBF4FF]">
+            <section id="contato" className="py-16 px-4 bg-transparent">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-xl font-bold text-[#1A202C] mb-4">Entre em contato via WhatsApp</h2>
                     <p className="text-gray-700 mb-2">📱 WhatsApp: <a href="https://wa.me/5561996204646" target="_blank" rel="noreferrer" className="underline">(61) 9 9620-4646</a></p>
