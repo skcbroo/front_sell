@@ -2,6 +2,7 @@
 import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
 import Hero from "../components/Hero";
+import Diferenciais from "./components/Diferenciais";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -20,13 +21,9 @@ export default function Home() {
 
             {/* DIFERENCIAIS */}
             <section className="max-w-6xl mx-auto px-4 py-16">
-                <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">
-                    Por que escolher a MIDLEJ Capital?
-                </h2>
+               
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card icon="⚡" title="Liquidez Imediata" text="Receba o dinheiro em até 24 horas após aprovação dos documentos" />
-                    <Card icon="💰" title="Custo Menor" text="Taxas mais baixas que empréstimos bancários tradicionais" />
-                    <Card icon="📋" title="Sem Burocracias" text="Processo simples e documentação mínima necessária" />
+                    <Diferenciais/>
                 </div>
             </section>
 
