@@ -12,32 +12,34 @@ export default function Home() {
         <NavbarLayout>
             {/* HERO */}
             <section className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-black py-20 px-4">
-                <div className="max-w-6xl mx-auto text-center">
-                    <div className="mb-4 inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wide">
-                        Pagamento em 24 horas garantido
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        Transforme seu processo judicial em dinheiro hoje
-                    </h1>
-                    <p className="text-lg mb-6">
-                        Receba em 24 horas — 100% legal e seguro
-                    </p>
-                    <a
-                        href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white text-[#1A202C] hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold"
-                    >
-                        QUERO VENDER MEU PROCESSO
-                    </a>
+  <div className="max-w-6xl mx-auto text-center">
+    <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+      Transforme seu processo judicial em dinheiro hoje
+    </h1>
+    <p className="text-lg mb-8">
+      Receba em 24 horas — 100% legal e seguro
+    </p>
 
-                    <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-sm text-back font-medium">
-                        <span>✓ Pagamento em 24h</span>
-                        <span>✓ 100% Legal</span>
-                        <span>✓ Sem Burocracias</span>
-                    </div>
-                </div>
-            </section>
+    <a
+      href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block px-8 py-4 rounded-xl shadow-lg bg-white text-[#1A202C] font-bold text-lg hover:bg-gray-100 transition duration-300"
+    >
+      📩 Quero vender meu processo
+      <div className="text-xs font-normal text-gray-500 mt-1">
+        Atendimento imediato via WhatsApp
+      </div>
+    </a>
+
+    <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 text-sm text-back font-medium">
+      <span>✓ Pagamento em 24h</span>
+      <span>✓ 100% Legal</span>
+      <span>✓ Sem Burocracias</span>
+    </div>
+  </div>
+</section>
+
 
             {/* DIFERENCIAIS */}
             <section className="max-w-6xl mx-auto px-4 py-16">
