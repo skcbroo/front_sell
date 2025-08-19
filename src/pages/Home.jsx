@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <NavbarLayout>
             {/* HERO */}
-            <section className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-black py-20 px-4">
+            <section className="bg-transparent text-black py-20 px-4">
                 <div className="max-w-6xl mx-auto text-center">
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                         Transforme seu processo judicial em dinheiro hoje
