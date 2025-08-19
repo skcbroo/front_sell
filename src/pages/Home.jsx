@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <NavbarLayout>
       {/* HERO */}
-      <section className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-white py-20 px-4">
+      <section className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-black py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-4 inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wide">
             Pagamento em 24 horas garantido
@@ -31,7 +31,7 @@ export default function Home() {
             QUERO VENDER MEU PROCESSO
           </a>
 
-          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-sm text-white font-medium">
+          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4 text-sm text-back font-medium">
             <span>✓ Pagamento em 24h</span>
             <span>✓ 100% Legal</span>
             <span>✓ Sem Burocracias</span>
@@ -76,7 +76,7 @@ export default function Home() {
             <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
             <button
               onClick={() => alert("Lógica de cálculo aqui")}
-              className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90"
+              className="bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90"
             >
               Calcular Agora
             </button>
@@ -118,7 +118,7 @@ export default function Home() {
           <p className="text-gray-700 mb-4">📍 Endereço: SHIS QI 19, Conjunto 04, Casa 19 – Lago Sul, Brasília/DF</p>
           <a
             href="https://wa.me/5561996204646"
-            className="inline-block bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90"
+            className="inline-block bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90"
             target="_blank" rel="noopener noreferrer"
           >
             💬 Conversar no WhatsApp
