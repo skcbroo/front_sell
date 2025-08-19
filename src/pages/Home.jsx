@@ -1,6 +1,7 @@
+
 import { Link } from "react-router-dom";
 import NavbarLayout from "../components/Navbar";
-
+import LeadForm from "../components/LeadForm";
 
 // === Configuração do endereço para o mapa ===
 const ENDERECO = "St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040";
@@ -198,9 +199,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GRÁFICO DE RETORNO AGREGADO */}
+      {/* CONTATO */}
+      <section className="max-w-6xl mx-auto mb-10">
+        <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
+          Fale com a nossa equipe
+        </h3>
 
-      
+        <div className="rounded-xl bg-[#EBF4FF] border border-[#CBD5E1] px-6 py-6 shadow-md">
+          <LeadForm />
+        </div>
+      </section>
+
       {/* LOCALIZAÇÃO */}
       <section className="max-w-6xl mx-auto mb-8">
         <h3 className="text-xl font-bold text-center mb-4 select-none cursor-default">
@@ -254,6 +263,8 @@ export default function Home() {
   );
 }
 
+// === COMPONENTES AUXILIARES ===
+
 function CardHome({ titulo, texto }) {
   return (
     <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-5 shadow-md text-[#2D3748]">
@@ -283,3 +294,4 @@ function FaqHome({ q, a }) {
     </div>
   );
 }
+
