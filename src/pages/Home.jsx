@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
                     <div className="overflow-x-auto">
-                     <table className="w-full border border-black border-collapse rounded-lg overflow-hidden">
+                     <table className="w-full border-3 border-black border-collapse rounded-lg overflow-hidden">
   <thead>
     <tr className="bg-[#EBF4FF] text-black">
       <th className="border border-black px-4 py-2 text-center font-bold">Característica</th>
