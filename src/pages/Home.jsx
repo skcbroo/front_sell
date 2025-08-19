@@ -1,3 +1,4 @@
+
 // NOVA HOMEPAGE COM BASE NA ESTRUTURA HTML DA LANDING, MAS COM VISUAL REACT MODERNO PADRÃO MIDLEJ
 import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
@@ -15,14 +16,14 @@ export default function Home() {
             {/* HERO */}
             <section className="bg-transparent text-black py-20 px-4">
                 <div className="max-w-6xl mx-auto text-center">
-                    <Hero/>
+                    <Hero />
                 </div>
             </section>
 
             {/* DIFERENCIAIS */}
             <div className="py-16">
-  <Diferenciais />
-</div>
+                <Diferenciais />
+            </div>
 
             {/* COMO FUNCIONA */}
             <section id="como-funciona" className="bg-[#EBF4FF] py-16 px-4 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
