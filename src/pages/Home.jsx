@@ -2,6 +2,7 @@
 import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
 import { useEffect } from "react";
+import Hero from "../components/Hero"; // ajuste o caminho
 
 export default function Home() {
     useEffect(() => {
@@ -11,29 +12,7 @@ export default function Home() {
     return (
         <NavbarLayout>
             {/* HERO */}
-            <section className="bg-transparent text-black py-20 px-4">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        Transforme seu processo judicial em dinheiro hoje
-                    </h1>
-                    <p className="text-lg mb-8">
-                        Receba em 24 horas — 100% legal e seguro
-                    </p>
-                    <a
-                        href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block px-8 py-4 rounded-xl shadow-md bg-[#2B6CB0] text-white font-semibold text-lg hover:bg-[#224d82] transition duration-300"
-                    >
-                        Quero vender meu processo agora
-                    </a>
-                    <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 text-sm text-back font-medium">
-                        <span>✓ Pagamento em 24h</span>
-                        <span>✓ 100% Legal</span>
-                        <span>✓ Sem Burocracias</span>
-                    </div>
-                </div>
-            </section>
+           <Hero/>
 
             {/* DIFERENCIAIS */}
             <section className="max-w-6xl mx-auto px-4 py-16">
