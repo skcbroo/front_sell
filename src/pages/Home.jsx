@@ -2,7 +2,7 @@
 import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
 import Hero from "../components/Hero";
-import Diferenciais from "./components/Diferenciais";
+import Diferenciais from "../components/Diferenciais";
 import { useEffect } from "react";
 
 export default function Home() {
