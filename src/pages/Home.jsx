@@ -1,171 +1,120 @@
-// NOVA HOMEPAGE COM BASE NA ESTRUTURA HTML DA LANDING, MAS COM VISUAL REACT MODERNO PADRÃO MIDLEJ
-import NavbarLayout from "../components/Navbar";
-import LeadForm from "../components/LeadForm";
-import { useEffect } from "react";
+import React, { useState } from 'react';
+import {
+  Clock, Shield, FileText, Ban, Lock, Calculator, Check, X, Star, MessageCircle, Phone, Mail, MapPin
+} from 'lucide-react';
 
-export default function Home() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+// Estrutura base de landing page com foco em conversão para crédito judicial
+function App() {
+  const [processValue, setProcessValue] = useState('');
+  const [estimatedOffer, setEstimatedOffer] = useState(null);
 
-    return (
-        <NavbarLayout>
-            {/* HERO */}
-           <section className="bg-gradient-to-r from-white via-[#A6B8C7] to-[#222B3B] text-black py-20 px-4">
-  <div className="max-w-6xl mx-auto text-center">
-    <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-      Transforme seu processo judicial em dinheiro hoje
-    </h1>
-    <p className="text-lg mb-8">
-      Receba em 24 horas — 100% legal e seguro
-    </p>
+  const calculateOffer = () => {
+    const value = parseFloat(processValue.replace(/[\D]/g, ''));
+    if (value && value > 0) {
+      const offer = Math.floor(value * 0.7);
+      setEstimatedOffer(offer);
+    }
+  };
 
-    <a
-      href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block px-8 py-4 rounded-xl shadow-md bg-[#2B6CB0] text-white font-semibold text-lg hover:bg-[#224d82] transition duration-300"
-    >
-      Quero vender meu processo agora
-    </a>
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(value);
+  };
 
-    <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 text-sm text-back font-medium">
-      <span>✓ Pagamento em 24h</span>
-      <span>✓ 100% Legal</span>
-      <span>✓ Sem Burocracias</span>
-    </div>
-  </div>
-</section>
+  const handleInputChange = (e) => {
+    const value = e.target.value.replace(/[^\d]/g, '');
+    const formatted = new Intl.NumberFormat('pt-BR').format(value);
+    setProcessValue(formatted);
+  };
 
-
-
-            {/* DIFERENCIAIS */}
-            <section className="max-w-6xl mx-auto px-4 py-16">
-                <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">
-                    Por que escolher a MIDLEJ Capital?
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card icon="⚡" title="Liquidez Imediata" text="Receba o dinheiro em até 24 horas após aprovação dos documentos" />
-                    <Card icon="💰" title="Custo Menor" text="Taxas mais baixas que empréstimos bancários tradicionais" />
-                    <Card icon="📋" title="Sem Burocracias" text="Processo simples e documentação mínima necessária" />
-                </div>
-            </section>
-
-            {/* COMO FUNCIONA */}
-           <section id="como-funciona" className="bg-[#EBF4FF] py-16 px-4 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Como Funciona</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-      <Step number="1" title="Análise 24h" text="Envie seus documentos para análise rápida" />
-      <Step number="2" title="Proposta" text="Receba nossa proposta comercial" />
-      <Step number="3" title="Documentação" text="Assine os contratos necessários" />
-      <Step number="4" title="Cartório" text="Registramos a cessão em cartório" />
-      <Step number="5" title="Pagamento 24h" text="Dinheiro na sua conta em 24 horas" />
-    </div>
-  </div>
-</section>
-
-
-
-            {/* CALCULADORA */}
-            <section className="max-w-4xl mx-auto px-4 py-16">
-                <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
-                    <div className="space-y-4">
-                        <label className="block text-sm font-medium text-black">
-                            Valor do processo (R$)
-                        </label>
-                        <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
-                        <button
-                            onClick={() => alert("Lógica de cálculo aqui")}
-                            className="bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90"
-                        >
-                            Calcular Agora
-                        </button>
-                        <div id="calculatorResult" className="text-sm text-gray-600"></div>
-                    </div>
-                </div>
-            </section>
-
-            {/* COMPARAÇÃO */}
-            <section id="vantagens" className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
-                    <div className="overflow-x-auto">
-                    <table className="w-full border-collapse rounded-lg overflow-hidden">
-  <thead>
-    <tr className="bg-[#EBF4FF] text-black border-b-2 border-black">
-      <th className="px-4 py-2 text-center font-bold border-r border-black">Característica</th>
-      <th className="px-4 py-2 text-center font-bold border-r border-black">MIDLEJ Capital</th>
-      <th className="px-4 py-2 text-center font-bold">Empréstimo Bancário</th>
-    </tr>
-  </thead>
-  <tbody className="text-black text-center">
-    <tr>
-      <td className="px-4 py-2 border-r border-black">Tempo para receber</td>
-      <td className="px-4 py-2 border-r border-black">✓ 24 horas</td>
-      <td className="px-4 py-2">✗ 5–30 dias</td>
-    </tr>
-    <tr>
-      <td className="px-4 py-2 border-r border-black">Juros</td>
-      <td className="px-4 py-2 border-r border-black">✓ Não há juros</td>
-      <td className="px-4 py-2">✗ 2–5% ao mês</td>
-    </tr>
-    <tr>
-      <td className="px-4 py-2 border-r border-black">Documentação</td>
-      <td className="px-4 py-2 border-r border-black">✓ Mínima</td>
-      <td className="px-4 py-2">✗ Extensa</td>
-    </tr>
-    <tr>
-      <td className="px-4 py-2 border-r border-black">Garantias</td>
-      <td className="px-4 py-2 border-r border-black">✓ Próprio processo</td>
-      <td className="px-4 py-2">✗ Bens pessoais</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-                    </div>
-                </div>
-            </section>
-
-            {/* CONTATO */}
-            <section id="contato" className="py-16 px-4 bg-transparent">
-                <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Entre em contato via WhatsApp</h2>
-                    <p className="text-gray-700 mb-2">📱 WhatsApp: <a href="https://wa.me/5561996204646" target="_blank" rel="noreferrer" className="underline">(61) 9 9620-4646</a></p>
-                    <p className="text-gray-700 mb-2">📧 Email: contato@midlejcapital.com.br</p>
-                    <p className="text-gray-700 mb-4">📍 Endereço: SHIS QI 19, Conjunto 04, Casa 19 – Lago Sul, Brasília/DF</p>
-                    <a
-                        href="https://wa.me/5561996204646"
-                        className="inline-block bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90"
-                        target="_blank" rel="noopener noreferrer"
-                    >
-                        💬 Conversar no WhatsApp
-                    </a>
-                </div>
-            </section>
-        </NavbarLayout>
-    );
-}
-
-function Card({ icon, title, text }) {
-    return (
-        <div className="bg-white border border-[#CBD5E1] p-6 rounded-xl shadow-sm text-center">
-            <div className="text-3xl mb-2">{icon}</div>
-            <h3 className="text-lg font-bold text-[#1A202C] mb-1">{title}</h3>
-            <p className="text-sm text-[#4A5568]">{text}</p>
+  return (
+    <div className="min-h-screen bg-white">
+      {/* HERO - Exemplo visual do produto */}
+      <section className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-24 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Transforme seu <span className="text-blue-600">processo judicial</span> em dinheiro
+          </h1>
+          <p className="text-xl text-gray-700 mb-8">
+            Receba em até 24h com segurança, agilidade e sem burocracia
+          </p>
+          <a
+            href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
+            className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition"
+          >
+            Falar com Especialista
+          </a>
         </div>
-    );
+      </section>
+
+      {/* BENEFÍCIOS */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">Por que escolher a MIDLEJ?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <BenefitCard icon={<Clock className="text-blue-600" />} title="24h Pagamento" description="Valor na sua conta em 1 dia útil" />
+            <BenefitCard icon={<Shield className="text-green-600" />} title="Legalidade" description="Contrato claro e seguro" />
+            <BenefitCard icon={<FileText className="text-purple-600" />} title="Pouca Burocracia" description="Documentação mínima necessária" />
+            <BenefitCard icon={<Ban className="text-red-600" />} title="Sem Garantias" description="Sem imóveis ou bens como aval" />
+            <BenefitCard icon={<Lock className="text-indigo-600" />} title="Privacidade" description="Total sigilo e proteção de dados" />
+          </div>
+        </div>
+      </section>
+
+      {/* CALCULADORA */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white p-8 rounded-2xl shadow-md border border-blue-200">
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">Simule sua Oferta</h3>
+            <input
+              type="text"
+              value={processValue}
+              onChange={handleInputChange}
+              placeholder="Digite o valor do processo"
+              className="w-full p-4 border border-gray-300 rounded-lg mb-4 text-lg"
+            />
+            <button
+              onClick={calculateOffer}
+              className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700"
+            >
+              Calcular
+            </button>
+
+            {estimatedOffer && (
+              <div className="mt-6 bg-green-50 p-4 rounded-lg text-center">
+                <p className="text-sm text-gray-600 mb-2">Oferta Estimada</p>
+                <p className="text-2xl font-bold text-green-600">{formatCurrency(estimatedOffer)}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Pronto para vender seu processo?</h2>
+        <p className="mb-8 text-blue-100">Receba sua proposta sem compromisso agora mesmo</p>
+        <a
+          href="https://wa.me/5561996204646"
+          className="inline-block bg-white text-blue-700 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100"
+        >
+          Simular Gratuito no WhatsApp
+        </a>
+      </section>
+    </div>
+  );
 }
 
-function Step({ number, title, text }) {
-    return (
-        <div className="bg-white border border-[#CBD5E1] p-4 rounded-xl shadow-sm text-center">
-            <div className="w-8 h-8 mx-auto rounded-full bg-blue-200 text-blue-800 font-bold flex items-center justify-center mb-2">{number}</div>
-            <h4 className="text-sm font-bold text-[#1A202C]">{title}</h4>
-            <p className="text-xs text-[#4A5568] mt-1">{text}</p>
-        </div>
-    );
+function BenefitCard({ icon, title, description }) {
+  return (
+    <div className="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+      <div className="mb-4 flex justify-center">{icon}</div>
+      <h3 className="text-lg font-bold text-gray-900 mb-1">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
+    </div>
+  );
 }
+
+export default App;
