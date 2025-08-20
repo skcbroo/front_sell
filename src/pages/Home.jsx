@@ -47,7 +47,7 @@ export default function Home() {
                     <div className="overflow-x-auto">
                         <table className="w-full border-collapse rounded-lg overflow-hidden">
                             <thead>
-                                <tr className="bg-[#EBF4FF] text-black border-b-2 border-black">
+                                <tr className="bg-[#EBF4FF] text-black border-b-1 border-black">
                                     <th className="px-4 py-2 text-center font-bold border-r border-black">Característica</th>
                                     <th className="px-4 py-2 text-center font-bold border-r border-black">MIDLEJ Capital</th>
                                     <th className="px-4 py-2 text-center font-bold">Empréstimo Bancário</th>
