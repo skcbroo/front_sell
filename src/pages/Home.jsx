@@ -14,6 +14,38 @@ export default function Home() {
         window.scrollTo(0, 0);
     }, []);
 
+    // --- Calculadora (deságio de 30%) ---
+    const [valorBruto, setValorBruto] = useState("");        // string do input
+    const [resultado, setResultado] = useState(null);        // { bruto, desagio, liquido } ou null
+
+    const toNumber = (str) => {
+        if (!str) return NaN;
+        // aceita 1.234,56 ou 1234.56
+        const clean = String(str).replace(/\./g, "").replace(",", ".");
+        return Number(clean);
+    };
+
+    const formatBRL = (n) =>
+        new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(
+            n
+        );
+
+    const calcular = () => {
+        const n = toNumber(valorBruto);
+        if (!Number.isFinite(n) || n <= 0) {
+            setResultado(null);
+            return;
+        }
+        const desagio = n * 0.30;
+        const liquido = n * 0.70;
+        setResultado({
+            bruto: n,
+            desagio,
+            liquido,
+        });
+    };
+
+
     return (
         <NavbarLayout>
             {/* HERO */}
@@ -79,22 +111,64 @@ export default function Home() {
 
             {/* CALCULADORA */}
             <section className="max-w-4xl mx-auto px-4 py-16">
-                <div className="bg-[#EBF4FF] border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
+                <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
+                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">
+                        Calcule quanto você pode receber
+                    </h2>
+
                     <div className="space-y-4">
-                        <label className="block text-sm font-medium text-black">Valor do processo (R$)</label>
-                        <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
-                        <button onClick={() => alert("Lógica de cálculo aqui")} className="bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90">
+                        <label htmlFor="processValue" className="block text-sm font-medium text-black">
+                            Valor do processo (R$)
+                        </label>
+
+                        <input
+                            id="processValue"
+                            type="text"
+                            inputMode="decimal"
+                            pattern="[0-9,.]*"
+                            value={valorBruto}
+                            onChange={(e) => setValorBruto(e.target.value)}
+                            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-[#2B6CB0]"
+                            placeholder="Ex: 100.000,00"
+                        />
+
+                        <button
+                            onClick={calcular}
+                            className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
+                        >
                             Calcular Agora
                         </button>
-                        <div id="calculatorResult" className="text-sm text-gray-600"></div>
+
+                        {/* Resultado */}
+                        {resultado && (
+                            <div
+                                className="mt-4 p-4 bg-white rounded-lg border border-[#E2E8F0]"
+                                role="status"
+                                aria-live="polite"
+                            >
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                    <div className="text-sm text-gray-600">
+                                        <div>Valor do processo: <strong>{formatBRL(resultado.bruto)}</strong></div>
+                                        <div>Deságio (30%): <strong className="text-red-600">{formatBRL(resultado.desagio)}</strong></div>
+                                    </div>
+                                    <div className="text-center sm:text-right">
+                                        <div className="text-sm text-gray-600">Você recebe</div>
+                                        <div className="text-2xl font-bold text-[#2B6CB0]">
+                                            {formatBRL(resultado.liquido)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
+
+
             <div>
-            <Testimonials/>
+                <Testimonials />
             </div>
-           
+
 
             {/* CONTATO */}
             <footer className="bg-blue-50 border-t">
@@ -115,7 +189,7 @@ export default function Home() {
                 </div>
             </footer>
 
-             <FloatingWhatsapp />
+            <FloatingWhatsapp />
         </NavbarLayout>
     );
 }
