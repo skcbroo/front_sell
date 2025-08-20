@@ -23,7 +23,7 @@ export default function Diferenciais() {
         <Card
           icon={Shield}
           color="text-green-600"
-          title="100% Legal e Seguro"
+          title="Legal e Seguro"
           text="Todas as operações seguem os requisitos legais e com total transparência."
         />
         <Card
