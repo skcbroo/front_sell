@@ -39,21 +39,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* CALCULADORA */}
-            <section className="max-w-4xl mx-auto px-4 py-16">
-                <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
-                    <div className="space-y-4">
-                        <label className="block text-sm font-medium text-black">Valor do processo (R$)</label>
-                        <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
-                        <button onClick={() => alert("Lógica de cálculo aqui")} className="bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90">
-                            Calcular Agora
-                        </button>
-                        <div id="calculatorResult" className="text-sm text-gray-600"></div>
-                    </div>
-                </div>
-            </section>
-
+        
             {/* COMPARAÇÃO */}
             <section id="vantagens" className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
@@ -90,6 +76,21 @@ export default function Home() {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </section>
+
+              {/* CALCULADORA */}
+            <section className="max-w-4xl mx-auto px-4 py-16">
+                <div className="bg-[#EBF4FF] border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
+                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
+                    <div className="space-y-4">
+                        <label className="block text-sm font-medium text-black">Valor do processo (R$)</label>
+                        <input type="number" id="processValue" className="w-full p-3 border rounded-lg" placeholder="Ex: 100000" />
+                        <button onClick={() => alert("Lógica de cálculo aqui")} className="bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90">
+                            Calcular Agora
+                        </button>
+                        <div id="calculatorResult" className="text-sm text-gray-600"></div>
                     </div>
                 </div>
             </section>
