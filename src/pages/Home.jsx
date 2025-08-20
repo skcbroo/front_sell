@@ -74,7 +74,7 @@ export default function Home() {
             </div>
 
             {/* COMPARAÇÃO */}
-            <section id="vantagens" className="py-16 px-4">
+            <section id="vantagens" className="p-4 py-16 px-4">
                 <div className="max-w-6xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
                         MIDLEJ vs Empréstimos Bancários
@@ -144,24 +144,6 @@ export default function Home() {
             <section className="max-w-4xl mx-auto px-4 py-16">
                 {/* tornei este container relative pra posicionar a logo absoluta */}
                 <div className="relative bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-
-                    {/* LOGO no canto direito */}
-                    {/* LOGO no canto superior-direito (maior e um pouco mais à esquerda) */}
-                    <div
-                        className="
-    absolute top-4 right-20
-    rounded-lg  backdrop-blur
-    px-3 py-2 shadow ring-1 ring-black/5
-  "
-                    >
-                        <img
-                            src="/icon.png"
-                            alt="MIDLEJ Capital"
-                            className="h-12 md:h-14 w-auto select-none pointer-events-none drop-shadow-sm"
-                        />
-                    </div>
-
-
                     <h2 className="text-xl font-bold text-[#1A202C] mb-4">
                         Calcule quanto você pode receber
                     </h2>
