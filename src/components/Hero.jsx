@@ -45,7 +45,7 @@ export default function Hero() {
         {/* Benefícios */}
         <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
           <Pill icon={<Clock />} label="Pagamento em 24h" />
-          <Pill icon={<Shield />} label="100% Legal" />
+          <Pill icon={<Shield />} label="Seguro" />
           <Pill icon={<FileText />} label="Documentos Mínimos" />
           <Pill icon={<CreditCard />} label="Sem Garantias" />
           <Pill icon={<Lock />} label="Privacidade" />
