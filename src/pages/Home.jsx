@@ -97,17 +97,27 @@ export default function Home() {
             </section>
 
             {/* CONTATO */}
-            <section id="contato" className="bg-[#EBF4FF] py-16 px-4 ">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">Entre em contato via WhatsApp</h2>
-                    <p className="text-gray-700 mb-2">WhatsApp: <a href="https://wa.me/5561996204646" target="_blank" rel="noreferrer" className="underline">(61) 9 9620-4646</a></p>
-                    <p className="text-gray-700 mb-2">Email: contato@midlejcapital.com.br</p>
-                    <p className="text-gray-700 mb-4">Endereço: SHIS QI 19, Conjunto 04, Casa 19 – Lago Sul, Brasília/DF</p>
-                    <a href="https://wa.me/5561996204646" className="inline-block bg-[#2B6CB0] text-black font-semibold px-6 py-2 rounded-lg hover:opacity-90" target="_blank" rel="noopener noreferrer">
-                        Conversar no WhatsApp
-                    </a>
-                </div>
-            </section>
+            <footer className="bg-[#EBF4FF] border-t border-[#CBD5E1] py-6 px-4">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between text-sm text-gray-700">
+    <div className="mb-4 md:mb-0">
+      <h3 className="font-bold text-[#1A202C]">MIDLEJ CAPITAL</h3>
+      <p>© 2023 by Midlej Tecnology.</p>
+      <p>CNPJ: 35.340.252/0001-44</p>
+    </div>
+    <div className="text-left md:text-right">
+      <p>
+        <span className="font-semibold">Endereço:</span> St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040
+      </p>
+      <p>
+        <span className="font-semibold">Email:</span> contato@midlejcapital.com.br
+      </p>
+      <p>
+        <span className="font-semibold">Telefone:</span> (61) 99620-4646
+      </p>
+    </div>
+  </div>
+</footer>
+
         </NavbarLayout>
     );
 }
