@@ -5,6 +5,8 @@ import LeadForm from "../components/LeadForm";
 import Hero from "../components/Hero";
 import Diferenciais from "../components/Diferenciais";
 import ComoFunciona from "../components/ComoFunciona";
+import FloatingWhatsapp from "../components/FloatingWhatsapp";
+
 import { useEffect } from "react";
 
 export default function Home() {
@@ -109,7 +111,7 @@ export default function Home() {
                 </div>
             </footer>
 
-
+             <FloatingWhatsapp />
         </NavbarLayout>
     );
 }
