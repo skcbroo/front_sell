@@ -7,6 +7,7 @@ import ComoFunciona from "../components/ComoFunciona";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import Testimonials from "../components/Testimonials";
 import { useEffect, useState } from "react";
+import { Clock, ShieldCheck, Info, Calculator } from "lucide-react";
 
 export default function Home() {
     useEffect(() => {
@@ -142,6 +143,13 @@ export default function Home() {
             {/* CALCULADORA */}
             <section className="max-w-4xl mx-auto px-4 py-16">
                 <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
+                     <div className="hidden sm:flex items-center gap-2 absolute top-3 right-3
+                    rounded-full bg-white/90 backdrop-blur px-3 py-1.5 shadow
+                    ring-1 ring-black/5">
+      <Clock className="w-4 h-4 text-[#2B6CB0]" />
+      <span className="text-xs font-medium text-slate-700">Pagamento em 24h</span>
+    </div>
+
                     <h2 className="text-xl font-bold text-[#1A202C] mb-4">
                         Calcule quanto você pode receber
                     </h2>
