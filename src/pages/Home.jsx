@@ -27,55 +27,55 @@ export default function Home() {
             </div>
 
             {/* COMO FUNCIONA */}
-            
-                <div className="max-w-6xl mx-auto">
-                   <ComoFunciona />
-                </div>
-           
 
-        
+            <div className="max-w-6xl mx-auto">
+                <ComoFunciona />
+            </div>
+
+
+
             {/* COMPARAÇÃO */}
             <section id="vantagens" className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
                     <div className="overflow-x-auto">
                         <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
-  <thead>
-    <tr className="bg-[#EBF4FF] text-gray-800">
-      <th className="px-6 py-3 text-center font-bold">Característica</th>
-      <th className="px-6 py-3 text-center font-bold">MIDLEJ Capital</th>
-      <th className="px-6 py-3 text-center font-bold">Empréstimo Bancário</th>
-    </tr>
-  </thead>
-  <tbody className="text-gray-700 text-center">
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="px-6 py-3 font-medium">Tempo para receber</td>
-      <td className="px-6 py-3 text-green-600 font-semibold">✓ 24 horas</td>
-      <td className="px-6 py-3 text-red-600 font-semibold">✗ 5–30 dias</td>
-    </tr>
-    <tr className="bg-gray-50 hover:bg-gray-100">
-      <td className="px-6 py-3 font-medium">Juros</td>
-      <td className="px-6 py-3 text-green-600 font-semibold">✓ Não há juros</td>
-      <td className="px-6 py-3 text-red-600 font-semibold">✗ 2–5% ao mês</td>
-    </tr>
-    <tr className="bg-white hover:bg-gray-50">
-      <td className="px-6 py-3 font-medium">Documentação</td>
-      <td className="px-6 py-3 text-green-600 font-semibold">✓ Mínima</td>
-      <td className="px-6 py-3 text-red-600 font-semibold">✗ Extensa</td>
-    </tr>
-    <tr className="bg-gray-50 hover:bg-gray-100">
-      <td className="px-6 py-3 font-medium">Garantias</td>
-      <td className="px-6 py-3 text-green-600 font-semibold">✓ Próprio processo</td>
-      <td className="px-6 py-3 text-red-600 font-semibold">✗ Bens pessoais</td>
-    </tr>
-  </tbody>
-</table>
+                            <thead>
+                                <tr className="bg-[#EBF4FF] text-gray-800">
+                                    <th className="px-6 py-3 text-center font-bold">Característica</th>
+                                    <th className="px-6 py-3 text-center font-bold">MIDLEJ Capital</th>
+                                    <th className="px-6 py-3 text-center font-bold">Empréstimo Bancário</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-gray-700 text-center">
+                                <tr className="bg-white hover:bg-gray-50">
+                                    <td className="px-6 py-3 font-medium">Tempo para receber</td>
+                                    <td className="px-6 py-3 text-green-600 font-semibold">✓ 24 horas</td>
+                                    <td className="px-6 py-3 text-red-600 font-semibold">✗ 5–30 dias</td>
+                                </tr>
+                                <tr className="bg-gray-50 hover:bg-gray-100">
+                                    <td className="px-6 py-3 font-medium">Juros</td>
+                                    <td className="px-6 py-3 text-green-600 font-semibold">✓ Não há juros</td>
+                                    <td className="px-6 py-3 text-red-600 font-semibold">✗ 2–5% ao mês</td>
+                                </tr>
+                                <tr className="bg-white hover:bg-gray-50">
+                                    <td className="px-6 py-3 font-medium">Documentação</td>
+                                    <td className="px-6 py-3 text-green-600 font-semibold">✓ Mínima</td>
+                                    <td className="px-6 py-3 text-red-600 font-semibold">✗ Extensa</td>
+                                </tr>
+                                <tr className="bg-gray-50 hover:bg-gray-100">
+                                    <td className="px-6 py-3 font-medium">Garantias</td>
+                                    <td className="px-6 py-3 text-green-600 font-semibold">✓ Próprio processo</td>
+                                    <td className="px-6 py-3 text-red-600 font-semibold">✗ Bens pessoais</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
             </section>
 
-              {/* CALCULADORA */}
+            {/* CALCULADORA */}
             <section className="max-w-4xl mx-auto px-4 py-16">
                 <div className="bg-[#EBF4FF] border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
                     <h2 className="text-xl font-bold text-[#1A202C] mb-4">Calcule quanto você pode receber</h2>
@@ -92,22 +92,22 @@ export default function Home() {
 
             {/* CONTATO */}
             <footer className="bg-blue-50 border-t">
-  <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
-    {/* Coluna 1 */}
-    <div>
-      <p className="font-bold">MIDDLEJ CAPITAL</p>
-      <p>© 2023 by Midlej Tecnology.</p>
-      <p>CNPJ: 35.340.252/0001-44</p>
-    </div>
+                <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+                    {/* Coluna 1 */}
+                    <div>
+                        <p className="font-bold">MIDLEJ CAPITAL</p>
+                        <p>© 2023 by Midlej Tecnology.</p>
+                        <p>CNPJ: 35.340.252/0001-44</p>
+                    </div>
 
-    {/* Coluna 2 */}
-    <div className="md:text-right">
-      <p><span className="font-bold">Endereço:</span> St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040</p>
-      <p><span className="font-bold">Email:</span> contato@midlejcapital.com.br</p>
-      <p><span className="font-bold">Telefone:</span> (61) 99620-4646</p>
-    </div>
-  </div>
-</footer>
+                    {/* Coluna 2 */}
+                    <div className="md:text-right">
+                        <p><span className="font-bold">Endereço:</span> St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040</p>
+                        <p><span className="font-bold">Email:</span> contato@midlejcapital.com.br</p>
+                        <p><span className="font-bold">Telefone:</span> (61) 99620-4646</p>
+                    </div>
+                </div>
+            </footer>
 
 
         </NavbarLayout>
