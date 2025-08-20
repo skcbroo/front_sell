@@ -1,5 +1,5 @@
 // src/components/FloatingWhatsapp.jsx
-import { Whatsapp } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 
 export default function FloatingWhatsapp() {
   return (
@@ -19,7 +19,7 @@ export default function FloatingWhatsapp() {
         transition-all duration-200
       "
     >
-      <Whatsapp className="w-7 h-7" aria-hidden="true" />
+      <BsWhatsapp className="w-7 h-7" aria-hidden="true" />
       <span className="sr-only">Abrir conversa no WhatsApp</span>
     </a>
   );
