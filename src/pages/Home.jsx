@@ -141,79 +141,77 @@ export default function Home() {
             </section>
 
             {/* CALCULADORA */}
-            <section className="max-w-4xl mx-auto px-4 py-16">
-                <div className="bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-                     <div className="hidden sm:flex items-center gap-2 absolute top-3 right-3
-                    rounded-full bg-white/90 backdrop-blur px-3 py-1.5 shadow
-                    ring-1 ring-black/5">
-      <Clock className="w-4 h-4 text-[#2B6CB0]" />
-      <span className="text-xs font-medium text-slate-700">Pagamento em 24h</span>
+           <section className="max-w-4xl mx-auto px-4 py-16">
+  {/* tornei este container relative pra posicionar a logo absoluta */}
+  <div className="relative bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
+    
+    {/* LOGO no canto direito */}
+    <div className="absolute top-3 right-3 rounded-md bg-white/90 backdrop-blur px-2 py-1 shadow ring-1 ring-black/5">
+      <img
+        src="/logonova.png"            // mesma usada na Navbar
+        alt="MIDLEJ Capital"
+        className="h-8 md:h-10 w-auto select-none pointer-events-none drop-shadow-sm"
+      />
     </div>
 
-                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">
-                        Calcule quanto você pode receber
-                    </h2>
+    <h2 className="text-xl font-bold text-[#1A202C] mb-4">
+      Calcule quanto você pode receber
+    </h2>
 
-                    <div className="space-y-4">
-                        <label
-                            htmlFor="processValue"
-                            className="block text-sm font-medium text-black"
-                        >
-                            Valor do processo (R$)
-                        </label>
+    <div className="space-y-4">
+      <label htmlFor="processValue" className="block text-sm font-medium text-black">
+        Valor do processo (R$)
+      </label>
 
-                        <input
-                            id="processValue"
-                            type="text"
-                            inputMode="numeric"
-                            value={valorBruto}
-                            onChange={(e) => setValorBruto(maskBRL(e.target.value))}
-                            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-[#2B6CB0]"
-                            placeholder="R$ 100.000,00"
-                        />
+      <input
+        id="processValue"
+        type="text"
+        inputMode="numeric"
+        value={valorBruto}
+        onChange={(e) => setValorBruto(maskBRL(e.target.value))}
+        className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-[#2B6CB0]"
+        placeholder="R$ 100.000,00"
+      />
 
-                        <button
-                            onClick={calcular}
-                            className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
-                        >
-                            Calcular Agora
-                        </button>
+      <button
+        onClick={calcular}
+        className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
+      >
+        Calcular Agora
+      </button>
 
-                        {/* Resultado */}
-                        {/* Resultado */}
-                        {resultado && (
-                            <div
-                                className="mt-4 p-5 bg-white rounded-lg border border-[#E2E8F0]"
-                                role="status"
-                                aria-live="polite"
-                            >
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                                    <div className="text-left">
-                                        <div className="text-sm text-gray-500">Você recebe</div>
-                                        <div className="text-3xl font-extrabold text-[#2B6CB0]">
-                                            {formatBRL(resultado.liquido)}
-                                        </div>
-                                        <p className="mt-1 text-sm text-gray-600">
-                                            Pagamento em até <strong>24h</strong> após aprovação.
-                                        </p>
-                                    </div>
+      {resultado && (
+        <div
+          className="mt-4 p-5 bg-white rounded-lg border border-[#E2E8F0]"
+          role="status"
+          aria-live="polite"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="text-left">
+              <div className="text-sm text-gray-500">Você recebe</div>
+              <div className="text-3xl font-extrabold text-[#2B6CB0]">
+                {formatBRL(resultado.liquido)}
+              </div>
+              <p className="mt-1 text-sm text-gray-600">
+                Pagamento em até <strong>24h</strong> após aprovação.
+              </p>
+            </div>
 
-                                    {/* Botão com a mesma função do CTA principal */}
-                                    <a
-                                        href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
-                                    >
-                                        Quero receber em 24h
-                                    </a>
-                                </div>
-                            </div>
-                        )}
+            <a
+              href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
+            >
+              Quero receber em 24h
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
 
-                    </div>
-                </div>
-            </section>
 
             <div>
                 <Testimonials />
