@@ -74,12 +74,12 @@ export default function Home() {
             </div>
 
             {/* COMPARAÇÃO */}
-            <section id="vantagens" className="p-4 py-16 px-4">
+            <section id="vantagens" className="py-16 px-4">
                 <div className="max-w-6xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
                         MIDLEJ vs Empréstimos Bancários
                     </h2>
-                    <p className="mt-3 text-lg text-slate-600">
+                    <p className="p-4 mt-3 text-lg text-slate-600">
                         Veja por que somos a melhor escolha
                     </p>
                     <div className="overflow-x-auto">
