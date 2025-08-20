@@ -97,26 +97,24 @@ export default function Home() {
             </section>
 
             {/* CONTATO */}
-            <footer className="bg-[#EBF4FF] border-t border-[#CBD5E1] p-15 py-6 px-4">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between text-sm text-gray-700">
-    <div className="mb-4 md:mb-0">
-      <h3 className="font-bold text-[#1A202C]">MIDLEJ CAPITAL</h3>
+            <footer className="bg-blue-50 border-t">
+  <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+    {/* Coluna 1 */}
+    <div>
+      <p className="font-bold">MIDDLEJ CAPITAL</p>
       <p>© 2023 by Midlej Tecnology.</p>
       <p>CNPJ: 35.340.252/0001-44</p>
     </div>
-    <div className="text-left md:text-right">
-      <p>
-        <span className="font-semibold">Endereço:</span> St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040
-      </p>
-      <p>
-        <span className="font-semibold">Email:</span> contato@midlejcapital.com.br
-      </p>
-      <p>
-        <span className="font-semibold">Telefone:</span> (61) 99620-4646
-      </p>
+
+    {/* Coluna 2 */}
+    <div className="md:text-right">
+      <p><span className="font-bold">Endereço:</span> St. de Habitações Individuais Sul QI 19 casa 19 - Lago Sul, Brasília - DF, 71655-040</p>
+      <p><span className="font-bold">Email:</span> contato@midlejcapital.com.br</p>
+      <p><span className="font-bold">Telefone:</span> (61) 99620-4646</p>
     </div>
   </div>
 </footer>
+
 
         </NavbarLayout>
     );
