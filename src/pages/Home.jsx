@@ -45,37 +45,38 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Vantagens vs Empréstimo Bancário</h2>
                     <div className="overflow-x-auto">
-                        <table className="w-full border-collapse rounded-lg overflow-hidden">
-                            <thead>
-                                <tr className="bg-[#EBF4FF] text-black border-b-1 border-black">
-                                    <th className="px-4 py-2 text-center font-bold border-r border-black">Característica</th>
-                                    <th className="px-4 py-2 text-center font-bold border-r border-black">MIDLEJ Capital</th>
-                                    <th className="px-4 py-2 text-center font-bold">Empréstimo Bancário</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-black text-center">
-                                <tr>
-                                    <td className="px-4 py-2 border-r border-black">Tempo para receber</td>
-                                    <td className="px-4 py-2 border-r border-black">✓ 24 horas</td>
-                                    <td className="px-4 py-2">✗ 5–30 dias</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-2 border-r border-black">Juros</td>
-                                    <td className="px-4 py-2 border-r border-black">✓ Não há juros</td>
-                                    <td className="px-4 py-2">✗ 2–5% ao mês</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-2 border-r border-black">Documentação</td>
-                                    <td className="px-4 py-2 border-r border-black">✓ Mínima</td>
-                                    <td className="px-4 py-2">✗ Extensa</td>
-                                </tr>
-                                <tr>
-                                    <td className="px-4 py-2 border-r border-black">Garantias</td>
-                                    <td className="px-4 py-2 border-r border-black">✓ Próprio processo</td>
-                                    <td className="px-4 py-2">✗ Bens pessoais</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
+  <thead>
+    <tr className="bg-[#EBF4FF] text-gray-800">
+      <th className="px-6 py-3 text-center font-semibold">Característica</th>
+      <th className="px-6 py-3 text-center font-semibold">MIDLEJ Capital</th>
+      <th className="px-6 py-3 text-center font-semibold">Empréstimo Bancário</th>
+    </tr>
+  </thead>
+  <tbody className="text-gray-700 text-center">
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="px-6 py-3 font-medium">Tempo para receber</td>
+      <td className="px-6 py-3 text-green-600 font-semibold">✓ 24 horas</td>
+      <td className="px-6 py-3 text-red-600">✗ 5–30 dias</td>
+    </tr>
+    <tr className="bg-gray-50 hover:bg-gray-100">
+      <td className="px-6 py-3 font-medium">Juros</td>
+      <td className="px-6 py-3 text-green-600 font-semibold">✓ Não há juros</td>
+      <td className="px-6 py-3 text-red-600">✗ 2–5% ao mês</td>
+    </tr>
+    <tr className="bg-white hover:bg-gray-50">
+      <td className="px-6 py-3 font-medium">Documentação</td>
+      <td className="px-6 py-3 text-green-600 font-semibold">✓ Mínima</td>
+      <td className="px-6 py-3 text-red-600">✗ Extensa</td>
+    </tr>
+    <tr className="bg-gray-50 hover:bg-gray-100">
+      <td className="px-6 py-3 font-medium">Garantias</td>
+      <td className="px-6 py-3 text-green-600 font-semibold">✓ Próprio processo</td>
+      <td className="px-6 py-3 text-red-600">✗ Bens pessoais</td>
+    </tr>
+  </tbody>
+</table>
+
                     </div>
                 </div>
             </section>
