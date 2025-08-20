@@ -2,18 +2,16 @@
 import { BsWhatsapp } from "react-icons/bs";
 import { logWhatsappClick } from "../utils/analytics";
 
-const WA_URL = "https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial";
-
 export default function FloatingWhatsapp() {
   return (
     <a
-      href={WA_URL}
+      href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => logWhatsappClick('hero')}
       aria-label="Falar no WhatsApp"
-      onClick={() => logWhatsappClick('floating')}
       className="
-        fixed bottom-4 right-4 z-50
+        fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50
         inline-flex items-center justify-center
         w-14 h-14 rounded-full
         bg-green-500 text-white
