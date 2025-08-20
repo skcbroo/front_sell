@@ -75,15 +75,15 @@ export default function Home() {
 
             {/* COMPARAÇÃO */}
             <section id="vantagens" className="py-16 px-4">
-                 <div className="max-w-6xl mx-auto text-center">
-                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
                         MIDLEJ vs Empréstimos Bancários
                     </h2>
-                         <p className="mt-3 text-lg text-slate-600">
-                              Veja por que somos a melhor escolha
-                            </p>
+                    <p className="mt-3 text-lg text-slate-600">
+                        Veja por que somos a melhor escolha
+                    </p>
                     <div className="overflow-x-auto">
-                         <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
+                        <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
                             <thead>
                                 <tr className="bg-[#EBF4FF] text-gray-800">
                                     <th className="px-6 py-3 text-center font-bold">
@@ -141,76 +141,76 @@ export default function Home() {
             </section>
 
             {/* CALCULADORA */}
-           <section className="max-w-4xl mx-auto px-4 py-16">
-  {/* tornei este container relative pra posicionar a logo absoluta */}
-  <div className="relative bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
-    
-    {/* LOGO no canto direito */}
-    <div className="absolute top-3 right-3 rounded-md bg-white/90 backdrop-blur px-2 py-1 shadow ring-1 ring-black/5">
-      <img
-        src="/logonova.png"            // mesma usada na Navbar
-        alt="MIDLEJ Capital"
-        className="h-8 md:h-10 w-auto select-none pointer-events-none drop-shadow-sm"
-      />
-    </div>
+            <section className="max-w-4xl mx-auto px-4 py-16">
+                {/* tornei este container relative pra posicionar a logo absoluta */}
+                <div className="relative bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
 
-    <h2 className="text-xl font-bold text-[#1A202C] mb-4">
-      Calcule quanto você pode receber
-    </h2>
+                    {/* LOGO no canto direito */}
+                    <div className="absolute top-3 right-3 rounded-md bg-white/90 backdrop-blur px-2 py-1 shadow ring-1 ring-black/5">
+                        <img
+                            src="/logonova.png"            // mesma usada na Navbar
+                            alt="MIDLEJ Capital"
+                            className="h-8 md:h-10 w-auto select-none pointer-events-none drop-shadow-sm"
+                        />
+                    </div>
 
-    <div className="space-y-4">
-      <label htmlFor="processValue" className="block text-sm font-medium text-black">
-        Valor do processo (R$)
-      </label>
+                    <h2 className="text-xl font-bold text-[#1A202C] mb-4">
+                        Calcule quanto você pode receber
+                    </h2>
 
-      <input
-        id="processValue"
-        type="text"
-        inputMode="numeric"
-        value={valorBruto}
-        onChange={(e) => setValorBruto(maskBRL(e.target.value))}
-        className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-[#2B6CB0]"
-        placeholder="R$ 100.000,00"
-      />
+                    <div className="space-y-4">
+                        <label htmlFor="processValue" className="block text-sm font-medium text-black">
+                            Valor do processo (R$)
+                        </label>
 
-      <button
-        onClick={calcular}
-        className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
-      >
-        Calcular Agora
-      </button>
+                        <input
+                            id="processValue"
+                            type="text"
+                            inputMode="numeric"
+                            value={valorBruto}
+                            onChange={(e) => setValorBruto(maskBRL(e.target.value))}
+                            className="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-[#2B6CB0]"
+                            placeholder="R$ 100.000,00"
+                        />
 
-      {resultado && (
-        <div
-          className="mt-4 p-5 bg-white rounded-lg border border-[#E2E8F0]"
-          role="status"
-          aria-live="polite"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div className="text-left">
-              <div className="text-sm text-gray-500">Você recebe</div>
-              <div className="text-3xl font-extrabold text-[#2B6CB0]">
-                {formatBRL(resultado.liquido)}
-              </div>
-              <p className="mt-1 text-sm text-gray-600">
-                Pagamento em até <strong>24h</strong> após aprovação.
-              </p>
-            </div>
+                        <button
+                            onClick={calcular}
+                            className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
+                        >
+                            Calcular Agora
+                        </button>
 
-            <a
-              href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
-            >
-              Quero receber em 24h
-            </a>
-          </div>
-        </div>
-      )}
-    </div>
-  </div>
-</section>
+                        {resultado && (
+                            <div
+                                className="mt-4 p-5 bg-white rounded-lg border border-[#E2E8F0]"
+                                role="status"
+                                aria-live="polite"
+                            >
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                                    <div className="text-left">
+                                        <div className="text-sm text-gray-500">Você recebe</div>
+                                        <div className="text-3xl font-extrabold text-[#2B6CB0]">
+                                            {formatBRL(resultado.liquido)}
+                                        </div>
+                                        <p className="mt-1 text-sm text-gray-600">
+                                            Pagamento em até <strong>24h</strong> após aprovação.
+                                        </p>
+                                    </div>
+
+                                    <a
+                                        href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
+                                    >
+                                        Quero receber em 24h
+                                    </a>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </section>
 
 
             <div>
