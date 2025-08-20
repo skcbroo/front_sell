@@ -4,6 +4,7 @@ import NavbarLayout from "../components/Navbar";
 import LeadForm from "../components/LeadForm";
 import Hero from "../components/Hero";
 import Diferenciais from "../components/Diferenciais";
+import ComoFunciona from "../components/ComoFunciona";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -26,18 +27,11 @@ export default function Home() {
             </div>
 
             {/* COMO FUNCIONA */}
-            <section id="como-funciona" className="bg-[#EBF4FF] py-16 px-4 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center text-2xl font-bold text-[#1A202C] mb-8">Como Funciona</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                        <Step number="1" title="Análise 24h" text="Envie seus documentos para análise rápida" />
-                        <Step number="2" title="Proposta" text="Receba nossa proposta comercial" />
-                        <Step number="3" title="Documentação" text="Assine os contratos necessários" />
-                        <Step number="4" title="Cartório" text="Registramos a cessão em cartório" />
-                        <Step number="5" title="Pagamento 24h" text="Dinheiro na sua conta em 24 horas" />
-                    </div>
+                   <ComoFunciona />
                 </div>
-            </section>
+           
 
         
             {/* COMPARAÇÃO */}
