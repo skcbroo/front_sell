@@ -7,7 +7,7 @@ import Diferenciais from "../components/Diferenciais";
 import ComoFunciona from "../components/ComoFunciona";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import Testimonials from "../components/Testimonials";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
     useEffect(() => {
