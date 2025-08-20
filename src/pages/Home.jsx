@@ -7,12 +7,21 @@ import ComoFunciona from "../components/ComoFunciona";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import Testimonials from "../components/Testimonials";
 import { useEffect, useState } from "react";
-import { Clock, ShieldCheck, Info, Calculator } from "lucide-react";
+import { Clock, ShieldCheck, Info, Calculator } from "lucide-react";]
+import { logEvent } from "../utils/logger";
+
 
 export default function Home() {
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+  window.scrollTo(0, 0);
+
+  // log do carregamento da página
+  logEvent("pageview", {
+    path: window.location.pathname,
+    title: document.title,
+  });
+}, []);
+
 
     // --- Calculadora (deságio de 30%) ---
 
@@ -52,6 +61,7 @@ export default function Home() {
         const desagio = n * 0.3;
         const liquido = n * 0.7;
         setResultado({ bruto: n, desagio, liquido });
+       logEvent("click_calcular", { bruto: n, desagio, liquido });
     };
 
     return (
