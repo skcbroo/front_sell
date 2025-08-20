@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     text:
-      "Precisava urgente do dinheiro e a MIDLEJ resolveu em 24 horas. Recomendo!",
+      "Precisava urgente do dinheiro e a MIDLEJ resolveu em menos de 24 horas. Recomendo!",
     name: "Maria Silva",
     role: "Processo Trabalhista",
     rating: 5,
