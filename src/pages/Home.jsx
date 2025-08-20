@@ -57,22 +57,22 @@ export default function Home() {
     <tr className="bg-white hover:bg-gray-50">
       <td className="px-6 py-3 font-medium">Tempo para receber</td>
       <td className="px-6 py-3 text-green-600 font-semibold">✓ 24 horas</td>
-      <td className="px-6 py-3 text-red-600">✗ 5–30 dias</td>
+      <td className="px-6 py-3 text-red-600 font-semibold">✗ 5–30 dias</td>
     </tr>
     <tr className="bg-gray-50 hover:bg-gray-100">
       <td className="px-6 py-3 font-medium">Juros</td>
       <td className="px-6 py-3 text-green-600 font-semibold">✓ Não há juros</td>
-      <td className="px-6 py-3 text-red-600">✗ 2–5% ao mês</td>
+      <td className="px-6 py-3 text-red-600 font-semibold">✗ 2–5% ao mês</td>
     </tr>
     <tr className="bg-white hover:bg-gray-50">
       <td className="px-6 py-3 font-medium">Documentação</td>
       <td className="px-6 py-3 text-green-600 font-semibold">✓ Mínima</td>
-      <td className="px-6 py-3 text-red-600">✗ Extensa</td>
+      <td className="px-6 py-3 text-red-600 font-semibold">✗ Extensa</td>
     </tr>
     <tr className="bg-gray-50 hover:bg-gray-100">
       <td className="px-6 py-3 font-medium">Garantias</td>
       <td className="px-6 py-3 text-green-600 font-semibold">✓ Próprio processo</td>
-      <td className="px-6 py-3 text-red-600">✗ Bens pessoais</td>
+      <td className="px-6 py-3 text-red-600 font-semibold">✗ Bens pessoais</td>
     </tr>
   </tbody>
 </table>
