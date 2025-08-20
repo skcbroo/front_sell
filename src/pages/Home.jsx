@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import Diferenciais from "../components/Diferenciais";
 import ComoFunciona from "../components/ComoFunciona";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
-
+import Testimonials from "../components/Testimonials";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -91,6 +91,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <div>
+            <Testimonials/>
+            </div>
+           
 
             {/* CONTATO */}
             <footer className="bg-blue-50 border-t">
