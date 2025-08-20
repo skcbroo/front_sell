@@ -79,10 +79,10 @@ export default function Home() {
                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
                         MIDLEJ vs Empréstimos Bancários
                     </h2>
-                    <p className="p-4 mt-3 text-lg text-slate-600">
+                    <p className="mt-3 text-lg text-slate-600">
                         Veja por que somos a melhor escolha
                     </p>
-                    <div className="overflow-x-auto">
+                    <div className="p-4 overflow-x-auto">
                         <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
                             <thead>
                                 <tr className="bg-[#EBF4FF] text-gray-800">
