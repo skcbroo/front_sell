@@ -8,7 +8,7 @@ export default function FloatingWhatsapp() {
       href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => logWhatsappClick('hero')}
+      onClick={() => logWhatsappClick('Icone do zap')}
       aria-label="Falar no WhatsApp"
       className="
         fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50
