@@ -98,7 +98,7 @@ export default function Home() {
 
             {/* CONTATO */}
             <footer className="bg-blue-50 border-t">
-  <div className="max-w-7xl mx-auto px-4 py-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+  <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
     {/* Coluna 1 */}
     <div>
       <p className="font-bold">MIDDLEJ CAPITAL</p>
