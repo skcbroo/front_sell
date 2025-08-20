@@ -48,9 +48,9 @@ export default function Home() {
                         <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
   <thead>
     <tr className="bg-[#EBF4FF] text-gray-800">
-      <th className="px-6 py-3 text-center font-semibold">Característica</th>
-      <th className="px-6 py-3 text-center font-semibold">MIDLEJ Capital</th>
-      <th className="px-6 py-3 text-center font-semibold">Empréstimo Bancário</th>
+      <th className="px-6 py-3 text-center font-bold">Característica</th>
+      <th className="px-6 py-3 text-center font-bold">MIDLEJ Capital</th>
+      <th className="px-6 py-3 text-center font-bold">Empréstimo Bancário</th>
     </tr>
   </thead>
   <tbody className="text-gray-700 text-center">
