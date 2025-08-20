@@ -74,7 +74,7 @@ export default function Home() {
 
             {/* COMPARAÇÃO */}
             <section id="vantagens" className="py-16 px-4">
-                <div className="max-w-6xl mx-auto">
+                 <div className="max-w-6xl mx-auto text-center">
                      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
                         MIDLEJ vs Empréstimos Bancários
                     </h2>
