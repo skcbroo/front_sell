@@ -2,6 +2,7 @@
 import { MessageCircle, Clock, Shield, FileText, CreditCard, Lock } from "lucide-react";
 import { logWhatsappClick } from "../utils/analytics";
 
+
 export default function Hero() {
   return (
     // wrapper full-bleed: ocupa 100vw e ignora o container pai
