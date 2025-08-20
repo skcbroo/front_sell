@@ -82,7 +82,7 @@ export default function Home() {
                               Veja por que somos a melhor escolha
                             </p>
                     <div className="overflow-x-auto">
-                         <table className="w-[92%] md:w-[86%] lg:w-[80%] mx-auto border-collapse rounded-xl overflow-hidden shadow-md">
+                         <table className="w-full border-collapse rounded-xl overflow-hidden shadow-md">
                             <thead>
                                 <tr className="bg-[#EBF4FF] text-gray-800">
                                     <th className="px-6 py-3 text-center font-bold">
