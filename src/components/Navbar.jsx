@@ -21,9 +21,10 @@ export default function NavbarLayout({ children }) {
             </nav>
 
             {/* Conteúdo da página */}
-            <div className="min-h-[calc(100vh-80px)]">
+            <div className="p-1 min-h-[calc(100vh-80px)]">
                 {children}
             </div>
         </div>
     );
 }
+
