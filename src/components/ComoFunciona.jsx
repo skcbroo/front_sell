@@ -35,7 +35,7 @@ export default function ComoFunciona() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
           <Step
             number="1"
-            title="Análise 24h"
+            title="Análise"
             text="Envie seus documentos para análise rápida"
             Icon={Clock}
           />
