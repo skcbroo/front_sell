@@ -96,7 +96,7 @@ export default function Home() {
                     {/* Coluna 1 */}
                     <div>
                         <p className="font-bold">MIDLEJ CAPITAL</p>
-                        <p>© 2023 by Midlej Tecnology.</p>
+                        <p>© 2023 by Midlej Technology.</p>
                         <p>CNPJ: 35.340.252/0001-44</p>
                     </div>
 
