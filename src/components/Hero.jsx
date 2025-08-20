@@ -1,3 +1,4 @@
+// Hero.jsx
 import { MessageCircle, Clock, Shield, FileText, CreditCard, Lock } from "lucide-react";
 
 export default function Hero() {
@@ -40,11 +41,11 @@ export default function Hero() {
 
         {/* Benefícios */}
         <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-          <Pill icon={<Clock className="w-4 h-4 text-green-600" />} label="Pagamento em 24h" />
-          <Pill icon={<Shield className="w-4 h-4 text-green-600" />} label="100% Legal" />
-          <Pill icon={<FileText className="w-4 h-4 text-green-600" />} label="Documentos Mínimos" />
-          <Pill icon={<CreditCard className="w-4 h-4 text-green-600" />} label="Sem Garantias" />
-          <Pill icon={<Lock className="w-4 h-4 text-green-600" />} label="Privacidade" />
+          <Pill icon={<Clock />} label="Pagamento em 24h" />
+          <Pill icon={<Shield />} label="100% Legal" />
+          <Pill icon={<FileText />} label="Documentos Mínimos" />
+          <Pill icon={<CreditCard />} label="Sem Garantias" />
+          <Pill icon={<Lock />} label="Privacidade" />
         </div>
       </div>
     </section>
@@ -53,8 +54,14 @@ export default function Hero() {
 
 function Pill({ icon, label }) {
   return (
-    <div className="flex items-center justify-center gap-2 rounded-full bg-white/80 px-4 py-2 backdrop-blur-sm shadow-sm">
-      {icon}
+    <div
+      className="
+        flex items-center justify-center gap-2 rounded-full bg-white/80 px-4 py-2
+        backdrop-blur-sm shadow-sm
+        [&_svg]:w-5 [&_svg]:h-5 [&_svg]:text-emerald-600 [&_svg]:shrink-0
+      "
+    >
+      <span className="shrink-0">{icon}</span>
       <span className="text-sm font-medium text-slate-700">{label}</span>
     </div>
   );
