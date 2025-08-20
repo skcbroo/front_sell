@@ -146,13 +146,21 @@ export default function Home() {
                 <div className="relative bg-[#EBF4FF] border border-[#CBD5E1] rounded-xl px-6 py-6 shadow-md">
 
                     {/* LOGO no canto direito */}
-                    <div className="absolute top-3 right-3 rounded-md bg-white/90 backdrop-blur px-2 py-1 shadow ring-1 ring-black/5">
+                    {/* LOGO no canto superior-direito (maior e um pouco mais à esquerda) */}
+                    <div
+                        className="
+    absolute top-4 right-8
+    rounded-lg bg-white/95 backdrop-blur
+    px-3 py-2 shadow ring-1 ring-black/5
+  "
+                    >
                         <img
-                            src="/logonova.png"            // mesma usada na Navbar
+                            src="/logonova.png"
                             alt="MIDLEJ Capital"
-                            className="h-8 md:h-10 w-auto select-none pointer-events-none drop-shadow-sm"
+                            className="h-12 md:h-14 w-auto select-none pointer-events-none drop-shadow-sm"
                         />
                     </div>
+
 
                     <h2 className="text-xl font-bold text-[#1A202C] mb-4">
                         Calcule quanto você pode receber
