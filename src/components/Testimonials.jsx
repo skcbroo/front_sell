@@ -35,7 +35,7 @@ export default function Testimonials() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <h2 className="text-center text-2xl md:text-3xl font-extrabold text-slate-900">
-          O que nossos clientes dizem
+          O que dizem nossos clientes
         </h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
