@@ -9,7 +9,7 @@ export default function FloatingWhatsapp() {
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
       className="
-        fixed bottom-4 left-4 z-50
+        fixed bottom-4 rigth-4 z-50
         inline-flex items-center justify-center
         w-14 h-14 rounded-full
         bg-green-500 text-white
