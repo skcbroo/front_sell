@@ -191,6 +191,7 @@ export default function Home() {
                                         href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                         onClick={() => logWhatsappClick('Quero receber em 24hrs (zap)')}
                                         className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
                                     >
                                         Quero receber em 24h
