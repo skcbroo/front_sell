@@ -97,7 +97,7 @@ export default function Home() {
             </section>
 
             {/* CONTATO */}
-            <footer className="bg-[#EBF4FF] border-t border-[#CBD5E1] py-6 px-4">
+            <footer className="bg-[#EBF4FF] border-t border-[#CBD5E1] py-15 px-4">
   <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between text-sm text-gray-700">
     <div className="mb-4 md:mb-0">
       <h3 className="font-bold text-[#1A202C]">MIDLEJ CAPITAL</h3>
