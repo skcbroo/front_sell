@@ -1,3 +1,4 @@
+// Hero.jsx
 import { MessageCircle, Clock, Shield, FileText, CreditCard, Lock } from "lucide-react";
 
 export default function Hero() {
@@ -39,12 +40,14 @@ export default function Hero() {
         </div>
 
         {/* Benefícios */}
-        <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-          <Pill icon={<Clock className="w-4 h-4 text-green-600" />} label="Pagamento em 24h" />
-          <Pill icon={<Shield className="w-4 h-4 text-green-600" />} label="100% Legal" />
-          <Pill icon={<FileText className="w-4 h-4 text-green-600" />} label="Documentos Mínimos" />
-          <Pill icon={<CreditCard className="w-4 h-4 text-green-600" />} label="Sem Garantias" />
-          <Pill icon={<Lock className="w-4 h-4 text-green-600" />} label="Privacidade" />
+        <div className="mt-8 sm:mt-12 max-w-md sm:max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            <Pill icon={<Clock className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />} label="Pagamento em 24h" />
+            <Pill icon={<Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />} label="100% Legal" />
+            <Pill icon={<FileText className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />} label="Documentos Mínimos" />
+            <Pill icon={<CreditCard className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />} label="Sem Garantias" />
+            <Pill icon={<Lock className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />} label="Privacidade" />
+          </div>
         </div>
       </div>
     </section>
@@ -53,9 +56,17 @@ export default function Hero() {
 
 function Pill({ icon, label }) {
   return (
-    <div className="flex items-center justify-center gap-2 rounded-full bg-white/80 px-4 py-2 backdrop-blur-sm shadow-sm">
-      {icon}
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+    <div
+      className="
+        w-full rounded-2xl bg-white/90 border border-slate-100 shadow-sm
+        flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5
+        min-h-[44px]
+      "
+    >
+      <span className="shrink-0">{icon}</span>
+      <span className="text-[13px] sm:text-sm font-medium leading-tight text-slate-700">
+        {label}
+      </span>
     </div>
   );
 }
