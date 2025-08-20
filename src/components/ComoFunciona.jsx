@@ -1,80 +1,45 @@
-// src/components/ComoFunciona.jsx
-import { motion } from "framer-motion";
-
-function Step({ number, title, text, delay = 0 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay }}
-      className="group bg-white/90 backdrop-blur-sm border border-[#CBD5E1] rounded-2xl p-6 shadow-sm text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-    >
-      <div className="w-9 h-9 mx-auto mb-3 rounded-full bg-blue-200 text-blue-800 font-bold flex items-center justify-center">
-        {number}
-      </div>
-      <h4 className="text-base font-bold text-[#1A202C]">{title}</h4>
-      <p className="text-sm text-[#4A5568] mt-1 leading-relaxed">{text}</p>
-    </motion.div>
-  );
-}
+import { FileText, Send, CheckCircle2, DollarSign } from "lucide-react";
 
 export default function ComoFunciona() {
   return (
-    // full-bleed como no Hero
+    // wrapper full-bleed
     <section
-      id="como-funciona"
       className="
         relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]
-        overflow-hidden bg-gradient-to-b from-[#EBF4FF] to-[#DCE9FF]
-        py-16 md:py-20
+        overflow-hidden bg-gradient-to-b from-[#EEF5FF] to-[#DCE9FF]
       "
     >
-      {/* container centralizado */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center text-2xl md:text-3xl font-extrabold text-[#1A202C] mb-10"
-        >
-          Como Funciona
-        </motion.h2>
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">
-          <Step
-            number="1"
-            title="Análise 24h"
-            text="Envie seus documentos para análise rápida."
-            delay={0.05}
-          />
-          <Step
-            number="2"
-            title="Proposta"
-            text="Receba nossa proposta comercial."
-            delay={0.1}
-          />
-          <Step
-            number="3"
-            title="Documentação"
-            text="Assine os contratos necessários."
-            delay={0.15}
-          />
-          <Step
-            number="4"
-            title="Cartório"
-            text="Registramos a cessão em cartório."
-            delay={0.2}
-          />
-          <Step
-            number="5"
-            title="Pagamento 24h"
-            text="Dinheiro na sua conta em até 24 horas."
-            delay={0.25}
-          />
+      {/* conteúdo centralizado */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+        {/* Título */}
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          Como <span className="text-[#2B6CB0]">funciona</span>
+        </h2>
+
+        {/* Subtítulo */}
+        <p className="mt-4 md:mt-6 text-lg md:text-xl text-slate-600">
+          Entenda o passo a passo simples para transformar seu crédito judicial em dinheiro.
+        </p>
+
+        {/* Etapas */}
+        <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <Step icon={<FileText className="w-6 h-6 text-[#2B6CB0]" />} label="Envie seus dados" />
+          <Step icon={<Send className="w-6 h-6 text-[#2B6CB0]" />} label="Receba nossa proposta" />
+          <Step icon={<CheckCircle2 className="w-6 h-6 text-[#2B6CB0]" />} label="Assine o contrato" />
+          <Step icon={<DollarSign className="w-6 h-6 text-[#2B6CB0]" />} label="Receba em até 24h" />
         </div>
       </div>
     </section>
+  );
+}
+
+function Step({ icon, label }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-3 rounded-xl bg-white/80 p-6 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300">
+      {icon}
+      <span className="text-base font-semibold text-slate-700">{label}</span>
+    </div>
   );
 }
