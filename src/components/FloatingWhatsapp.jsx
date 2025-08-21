@@ -1,6 +1,6 @@
 // src/components/FloatingWhatsapp.jsx
 import { BsWhatsapp } from "react-icons/bs";
-import { logWhatsappClick } from "../utils/analytics";
+import { logWhatsappClick } from "../utils/logger";
 
 export default function FloatingWhatsapp() {
   return (
