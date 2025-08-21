@@ -15,11 +15,7 @@ export default function Home() {
   window.scrollTo(0, 0);
 
   // log do carregamento da página
-  logEvent("pageview", {
-    path: window.location.pathname,
-    title: document.title,
-  });
-}, []);
+ logPageview();
 
 
     // --- Calculadora (deságio de 30%) ---
@@ -60,7 +56,8 @@ export default function Home() {
         const desagio = n * 0.3;
         const liquido = n * 0.7;
         setResultado({ bruto: n, desagio, liquido });
-       logEvent("click_calcular", { bruto: n, desagio, liquido });
+      logCalcClick({ bruto: n, desagio, liquido });
+
     };
 
     return (
