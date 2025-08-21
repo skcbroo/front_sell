@@ -8,8 +8,7 @@ import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import Testimonials from "../components/Testimonials";
 import { useEffect, useState } from "react";
 import { Clock, ShieldCheck, Info, Calculator } from "lucide-react";
-import { logEvent } from "../utils/logger";
-
+import { logPageview, logCalcClick, logWhatsappClick } from "../utils/logger";
 
 export default function Home() {
     useEffect(() => {
