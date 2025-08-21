@@ -15,7 +15,7 @@ export default function Home() {
   window.scrollTo(0, 0);
 
   // log do carregamento da página
- logPageview();
+ logPageview();}, []);
 
 
     // --- Calculadora (deságio de 30%) ---
