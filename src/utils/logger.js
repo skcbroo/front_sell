@@ -1,5 +1,6 @@
+
 // src/utils/logger.js
-const VITE_API_URL = `${import.meta.env.VITE_API_URL}/api/logs`;
+const LOG_ENDPOINT = `${import.meta.env.VITE_API_URL}/api/logs`;
 const STORAGE_KEY = "__event_queue_v1";
 const SESSION_KEY = "__session_id_v1";
 
