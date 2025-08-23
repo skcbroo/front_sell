@@ -50,11 +50,13 @@ async function sendBatch(events, attempt = 1) {
       if (ok) return true;
     }
     const res = await fetch(LOG_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      keepalive: true,
-      body: payload,
-    });
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: payload,
+  credentials: "include",       // 🔥 ESSENCIAL!
+  keepalive: true,
+});
+
     if (!res.ok) throw new Error("HTTP " + res.status);
     return true;
   } catch {
