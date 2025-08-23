@@ -1,6 +1,6 @@
 // Hero.jsx
 import { MessageCircle, Clock, Shield, FileText, CreditCard, Lock } from "lucide-react";
-import { logWhatsappClick } from "../utils/analytics";
+
 
 
 export default function Hero() {
@@ -34,7 +34,7 @@ export default function Hero() {
             href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
             target="_blank"
             rel="noopener noreferrer"
-             onClick={() => logWhatsappClick('Quero vender meu processo agora (zap)')}
+             
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2B6CB0] px-8 py-4 text-white text-lg font-semibold shadow-lg hover:bg-[#1E4CA8] hover:shadow-xl transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2B6CB0]"
           >
             <MessageCircle className="w-5 h-5" aria-hidden="true" />
