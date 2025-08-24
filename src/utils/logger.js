@@ -114,6 +114,15 @@ export function logCalcClick({ bruto, desagio, liquido }) {
   logEvent("click_calcular", { bruto, desagio, liquido });
 }
 
+export function logHeroCta(labelOrProps = "Clicl - Quero vender meu processo agora") {
+  if (typeof labelOrProps === "string") {
+    logEvent("cta_hero", { origem: labelOrProps });
+  } else {
+    logEvent("cta_hero", { origem: "cta", ...(labelOrProps || {}) });
+  }
+}
+
+
 export function logWhatsappClick(labelOrProps = "Quero receber em 24hrs (zap)") {
   if (typeof labelOrProps === "string") {
     logEvent("cta_whatsapp", { origem: labelOrProps });
