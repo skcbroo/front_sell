@@ -122,6 +122,15 @@ export function logWhatsappClick(labelOrProps = "Quero receber em 24hrs (zap)") 
   }
 }
 
+export function logDpsCalculo(labelOrProps = "CTA depois do cálculo") {
+  if (typeof labelOrProps === "string") {
+    logEvent("cta_dps_calculo", { origem: labelOrProps });
+  } else {
+    logEvent("cta_dps_calculo", { origem: "cta", ...(labelOrProps || {}) });
+  }
+}
+
+
 /** Opcional: log de erros JS */
 export function logError(error, ctx = {}) {
   logEvent("js_error", {
