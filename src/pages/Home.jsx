@@ -13,10 +13,11 @@ import { logPageview, logCalcClick, logWhatsappClick, logDpsCalculo } from "../u
 
 export default function Home() {
     useEffect(() => {
-  window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
-  // log do carregamento da página
- logPageview();}, []);
+        // log do carregamento da página
+        logPageview();
+    }, []);
 
 
     // --- Calculadora (deságio de 30%) ---
@@ -57,7 +58,7 @@ export default function Home() {
         const desagio = n * 0.3;
         const liquido = n * 0.7;
         setResultado({ bruto: n, desagio, liquido });
-      logCalcClick({ bruto: n, desagio, liquido });
+        logCalcClick({ bruto: n, desagio, liquido });
 
     };
 
@@ -171,12 +172,17 @@ export default function Home() {
                         />
 
                         <button
-                            
-                             onClick={() => logCalcClick("Botão de calcular")}
+                            onClick={() => {
+                                // opcional: log de clique no botão
+                                logWhatsappClick("Clique no botão Calcular");
+                                // executa o cálculo (este já loga bruto/deságio/líquido)
+                                calcular();
+                            }}
                             className="bg-[#2B6CB0] text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition"
                         >
                             Calcular Agora
                         </button>
+
 
                         {resultado && (
                             <div
@@ -199,8 +205,8 @@ export default function Home() {
                                         href="https://wa.me/5561996204646?text=Olá! Tenho interesse em vender meu processo judicial"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                         
-                                         onClick={() => logDpsCalculo("Botão depois do cálculo")}
+
+                                        onClick={() => logDpsCalculo("Botão depois do cálculo")}
                                         className="inline-flex items-center justify-center rounded-full bg-[#2B6CB0] text-white font-semibold px-6 py-3 shadow-md hover:bg-[#1E4CA8] hover:shadow-lg transition"
                                     >
                                         Quero receber em 24h
