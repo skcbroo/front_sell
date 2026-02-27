@@ -6,7 +6,6 @@ const ChatPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Mensagem de boas-vindas ao entrar na página
   useEffect(() => {
     setMessages([
       {
@@ -18,7 +17,6 @@ const ChatPage = () => {
     ]);
   }, []);
 
-  // Rola automaticamente para a última mensagem
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -37,7 +35,6 @@ const ChatPage = () => {
     setIsLoading(true);
 
     try {
-      // 🔁 Substitua pela URL do seu backend
       const response = await fetch('http://localhost:3001/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -77,40 +74,43 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-md mx-auto bg-gray-100">
-      {/* Cabeçalho */}
-      <div className="bg-green-600 text-white px-4 py-3 flex items-center gap-3 shadow-md">
-        <div className="w-10 h-10 rounded-full bg-white overflow-hidden flex items-center justify-center">
-          {/* Ícone do bot (pode ser um SVG ou imagem) */}
-          <span className="text-green-600 text-xl">🤖</span>
+    <div className="flex flex-col h-screen max-w-md mx-auto bg-white shadow-xl">
+      {/* Header com a cor azul escuro */}
+      <div className="bg-[#0A1E3C] text-white px-4 py-3 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+          <span className="text-white text-xl">⚖️</span>
         </div>
         <div>
-          <h2 className="font-semibold">Assistente de Propostas</h2>
-          <p className="text-xs text-green-200">Online • responde rápido</p>
+          <h2 className="font-semibold text-base">Assistente de Propostas</h2>
+          <p className="text-xs text-green-300">Online • responde rápido</p>
         </div>
       </div>
 
-      {/* Área de mensagens */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#e5ded8]">
+      {/* Área de mensagens com fundo cinza claro */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#F3F4F6]">
         {messages.map((msg) => (
           <div
             key={msg.id}
             className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.sender === 'bot' && (
-              <div className="w-8 h-8 rounded-full bg-white mr-2 flex-shrink-0 flex items-center justify-center">
-                <span className="text-green-600 text-sm">🤖</span>
+              <div className="w-8 h-8 rounded-full bg-[#0A1E3C] mr-2 flex-shrink-0 flex items-center justify-center">
+                <span className="text-white text-sm">⚖️</span>
               </div>
             )}
             <div
               className={`max-w-[75%] px-4 py-2 rounded-2xl ${
                 msg.sender === 'user'
-                  ? 'bg-green-100 text-gray-800 rounded-br-none'
-                  : 'bg-white text-gray-800 rounded-bl-none'
-              } ${msg.isError ? 'bg-red-100 text-red-800' : ''}`}
+                  ? 'bg-[#00A86B] text-white rounded-br-none'  // balão do usuário em verde
+                  : 'bg-white text-gray-800 rounded-bl-none shadow-sm' // balão do bot em branco
+              } ${msg.isError ? 'bg-red-500 text-white' : ''}`}
             >
               <p className="text-sm">{msg.text}</p>
-              <span className="text-[10px] text-gray-500 block text-right mt-1">
+              <span
+                className={`text-[10px] block text-right mt-1 ${
+                  msg.sender === 'user' ? 'text-green-100' : 'text-gray-400'
+                }`}
+              >
                 {msg.timestamp}
               </span>
             </div>
@@ -120,10 +120,10 @@ const ChatPage = () => {
         {/* Indicador de digitação */}
         {isLoading && (
           <div className="flex justify-start">
-            <div className="w-8 h-8 rounded-full bg-white mr-2 flex-shrink-0 flex items-center justify-center">
-              <span className="text-green-600 text-sm">🤖</span>
+            <div className="w-8 h-8 rounded-full bg-[#0A1E3C] mr-2 flex-shrink-0 flex items-center justify-center">
+              <span className="text-white text-sm">⚖️</span>
             </div>
-            <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-none">
+            <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-none shadow-sm">
               <div className="flex space-x-1">
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
                 <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
@@ -137,8 +137,10 @@ const ChatPage = () => {
 
       {/* Área de input */}
       <div className="bg-white border-t border-gray-200 px-3 py-2 flex items-center gap-2">
-        <button className="p-2 text-gray-500 hover:text-gray-700">
-          📎
+        <button className="p-2 text-gray-500 hover:text-[#0A1E3C] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+          </svg>
         </button>
         <textarea
           value={inputText}
@@ -150,7 +152,7 @@ const ChatPage = () => {
             }
           }}
           placeholder="Digite sua mensagem..."
-          className="flex-1 resize-none border-0 focus:ring-0 focus:outline-none text-sm py-2 max-h-24"
+          className="flex-1 resize-none border-0 focus:ring-0 focus:outline-none text-sm py-2 max-h-24 bg-gray-50 rounded-lg px-3"
           rows="1"
         />
         <button
@@ -158,11 +160,13 @@ const ChatPage = () => {
           disabled={!inputText.trim()}
           className={`p-2 rounded-full ${
             inputText.trim()
-              ? 'bg-green-600 text-white hover:bg-green-700'
+              ? 'bg-[#00A86B] text-white hover:bg-[#008f5c] shadow-md'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-          } transition-colors`}
+          } transition-all`}
         >
-          ➤
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+          </svg>
         </button>
       </div>
     </div>
