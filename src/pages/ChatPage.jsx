@@ -51,7 +51,7 @@ const ChatPage = () => {
 
       const botMessage = {
         id: messages.length + 2,
-        text: data.response,
+        text: data.reply,
         sender: 'bot',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
